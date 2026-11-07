@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat release-payload/part-*.b64 | tr -d '\n\r' | base64 --decode > /tmp/gatepath.zip
+          cat release-payload/part-0[0-8].b64 | tr -d '\n\r' | base64 --decode > /tmp/gatepath.zip
           unzip -t /tmp/gatepath.zip
           mkdir -p /tmp/gatepath
           unzip -q /tmp/gatepath.zip -d /tmp/gatepath
