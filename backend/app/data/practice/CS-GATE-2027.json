@@ -1,0 +1,1066 @@
+{
+  "paper_code": "CS",
+  "paper_name": "Computer Science and Information Technology",
+  "content_version": "1.0.0",
+  "content_status": "original_practice_pilot",
+  "content_origin": "GATEPath-authored original practice questions; not official GATE questions or PYQs.",
+  "editorial_status": "AI-drafted pilot content; academic review is required before public release.",
+  "created_on": "2026-11-06",
+  "syllabus_version": "GATE 2027",
+  "scoring_policy": {
+    "mcq_wrong": "one-third of marks deducted",
+    "msq_wrong": "zero; exact option set required",
+    "nat_wrong": "zero; accepted range inclusive"
+  },
+  "questions": [
+    {
+      "id": "GP-CS-001",
+      "paper_code": "CS",
+      "section_code": "CS-01",
+      "section_name": "Engineering Mathematics",
+      "topic_id": "CS-01-01",
+      "topic_name": "Discrete Mathematics",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "A finite set contains 5 distinct elements. How many subsets does its power set contain?",
+      "options": [
+        {
+          "key": "A",
+          "text": "16"
+        },
+        {
+          "key": "B",
+          "text": "25"
+        },
+        {
+          "key": "C",
+          "text": "32"
+        },
+        {
+          "key": "D",
+          "text": "64"
+        }
+      ],
+      "answer_key": "C",
+      "answer_range": null,
+      "solution": {
+        "title": "Number of subsets",
+        "steps": [
+          "For a set with n distinct elements, each element is either included or excluded from a subset.",
+          "There are therefore 2 choices for each of the 5 elements.",
+          "The total number of subsets is 2^5 = 32."
+        ],
+        "note": "This includes the empty set and the set itself."
+      }
+    },
+    {
+      "id": "GP-CS-002",
+      "paper_code": "CS",
+      "section_code": "CS-01",
+      "section_name": "Engineering Mathematics",
+      "topic_id": "CS-01-02",
+      "topic_name": "Linear Algebra",
+      "difficulty": "Intermediate",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "Find the rank of the matrix [[1, 2], [2, 4]].",
+      "options": [],
+      "answer_key": "1",
+      "answer_range": [
+        1.0,
+        1.0
+      ],
+      "solution": {
+        "title": "Rank by row dependence",
+        "steps": [
+          "The second row [2, 4] is exactly 2 times the first row [1, 2].",
+          "Only one row is linearly independent.",
+          "Hence the rank is 1."
+        ],
+        "note": "Rank is the maximum number of linearly independent rows or columns."
+      }
+    },
+    {
+      "id": "GP-CS-003",
+      "paper_code": "CS",
+      "section_code": "CS-01",
+      "section_name": "Engineering Mathematics",
+      "topic_id": "CS-01-04",
+      "topic_name": "Probability and Statistics",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 2,
+      "prompt": "A fair coin is tossed three times. What is the probability of obtaining exactly two heads? Enter the answer as a decimal.",
+      "options": [],
+      "answer_key": "0.375",
+      "answer_range": [
+        0.374,
+        0.376
+      ],
+      "solution": {
+        "title": "Binomial probability",
+        "steps": [
+          "There are 2^3 = 8 equally likely outcomes.",
+          "Exactly two heads can occur in HHT, HTH and THH: 3 outcomes.",
+          "The probability is 3/8 = 0.375."
+        ],
+        "note": "For n independent fair tosses, all 2^n sequences are equally likely."
+      }
+    },
+    {
+      "id": "GP-CS-004",
+      "paper_code": "CS",
+      "section_code": "CS-02",
+      "section_name": "Digital Logic",
+      "topic_id": "CS-02-01",
+      "topic_name": "Boolean Algebra and Minimization",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "Using Boolean algebra, simplify the expression A + A′B.",
+      "options": [
+        {
+          "key": "A",
+          "text": "AB"
+        },
+        {
+          "key": "B",
+          "text": "A + B"
+        },
+        {
+          "key": "C",
+          "text": "A′ + B"
+        },
+        {
+          "key": "D",
+          "text": "A′B"
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Boolean absorption identity",
+        "steps": [
+          "Apply the distributive identity X + YZ = (X + Y)(X + Z).",
+          "A + A′B = (A + A′)(A + B).",
+          "Since A + A′ = 1, the result is 1·(A + B) = A + B."
+        ],
+        "note": "This is a commonly used simplification identity."
+      }
+    },
+    {
+      "id": "GP-CS-005",
+      "paper_code": "CS",
+      "section_code": "CS-02",
+      "section_name": "Digital Logic",
+      "topic_id": "CS-02-02",
+      "topic_name": "Combinational and Sequential Circuits",
+      "difficulty": "Intermediate",
+      "question_type": "MSQ",
+      "marks": 2,
+      "prompt": "For a full adder with inputs A, B and Cin, which product terms appear in the carry-out expression? Select all that apply.",
+      "options": [
+        {
+          "key": "A",
+          "text": "AB"
+        },
+        {
+          "key": "B",
+          "text": "A·Cin"
+        },
+        {
+          "key": "C",
+          "text": "B·Cin"
+        },
+        {
+          "key": "D",
+          "text": "A + B + Cin"
+        }
+      ],
+      "answer_key": "A;B;C",
+      "answer_range": null,
+      "solution": {
+        "title": "Full-adder carry equation",
+        "steps": [
+          "Carry-out is 1 whenever at least two of the three input bits are 1.",
+          "The three pairwise products represent those cases: AB, A·Cin and B·Cin.",
+          "Therefore Cout = AB + A·Cin + B·Cin."
+        ],
+        "note": "MSQ requires the exact set of correct options; no partial marks are awarded in this practice engine."
+      }
+    },
+    {
+      "id": "GP-CS-006",
+      "paper_code": "CS",
+      "section_code": "CS-02",
+      "section_name": "Digital Logic",
+      "topic_id": "CS-02-03",
+      "topic_name": "Number Representation and Arithmetic",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "Interpret the 8-bit two’s-complement bit pattern 11101110 as a signed decimal integer.",
+      "options": [],
+      "answer_key": "-18",
+      "answer_range": [
+        -18.0,
+        -18.0
+      ],
+      "solution": {
+        "title": "Two’s-complement interpretation",
+        "steps": [
+          "The most significant bit is 1, so the value is negative.",
+          "Invert 11101110 to obtain 00010001, then add 1 to get 00010010.",
+          "00010010 is 18 in decimal, so the original signed value is −18."
+        ],
+        "note": "The same bit pattern interpreted as unsigned would have a different value."
+      }
+    },
+    {
+      "id": "GP-CS-007",
+      "paper_code": "CS",
+      "section_code": "CS-03",
+      "section_name": "Computer Organization and Architecture",
+      "topic_id": "CS-03-04",
+      "topic_name": "Memory Interfacing and Hierarchy",
+      "difficulty": "Intermediate",
+      "question_type": "NAT",
+      "marks": 2,
+      "prompt": "A cache has a hit time of 10 ns, a hit ratio of 0.8 and a miss penalty of 100 ns (in addition to the hit time). Find the average memory access time in ns.",
+      "options": [],
+      "answer_key": "30",
+      "answer_range": [
+        29.99,
+        30.01
+      ],
+      "solution": {
+        "title": "Average memory access time",
+        "steps": [
+          "AMAT = hit time + miss rate × miss penalty.",
+          "Miss rate = 1 − 0.8 = 0.2.",
+          "AMAT = 10 + 0.2 × 100 = 30 ns."
+        ],
+        "note": "The stated miss penalty is additional to the cache lookup time."
+      }
+    },
+    {
+      "id": "GP-CS-008",
+      "paper_code": "CS",
+      "section_code": "CS-03",
+      "section_name": "Computer Organization and Architecture",
+      "topic_id": "CS-03-06",
+      "topic_name": "Instruction Pipelining",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "An ideal pipeline has 5 stages, each taking the same clock period. For a very large number of instructions, what is its maximum ideal speedup over a non-pipelined design with the same stage delays?",
+      "options": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "4"
+        },
+        {
+          "key": "C",
+          "text": "5"
+        },
+        {
+          "key": "D",
+          "text": "10"
+        }
+      ],
+      "answer_key": "C",
+      "answer_range": null,
+      "solution": {
+        "title": "Ideal pipeline speedup",
+        "steps": [
+          "If each of k stages takes one unit of time, a non-pipelined instruction takes k units.",
+          "After the pipeline is filled, one instruction completes per unit time.",
+          "For a long instruction stream, ideal speedup approaches k = 5."
+        ],
+        "note": "Pipeline fill and drain overhead makes the speedup smaller for short instruction streams."
+      }
+    },
+    {
+      "id": "GP-CS-009",
+      "paper_code": "CS",
+      "section_code": "CS-03",
+      "section_name": "Computer Organization and Architecture",
+      "topic_id": "CS-03-04",
+      "topic_name": "Memory Interfacing and Hierarchy",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "A virtual memory system uses a page size of 4 KB. How many bits are required for the page offset?",
+      "options": [],
+      "answer_key": "12",
+      "answer_range": [
+        12.0,
+        12.0
+      ],
+      "solution": {
+        "title": "Page offset bits",
+        "steps": [
+          "4 KB = 4096 bytes.",
+          "4096 = 2^12.",
+          "Therefore, the page offset requires 12 bits."
+        ],
+        "note": "The offset identifies a byte within one page."
+      }
+    },
+    {
+      "id": "GP-CS-010",
+      "paper_code": "CS",
+      "section_code": "CS-04",
+      "section_name": "Programming and Data Structures",
+      "topic_id": "CS-04-03",
+      "topic_name": "Linear Data Structures",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "An initially empty stack performs: PUSH(1), PUSH(2), PUSH(3), POP(), PUSH(4), POP(). What is the element at the top of the stack now?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1"
+        },
+        {
+          "key": "B",
+          "text": "2"
+        },
+        {
+          "key": "C",
+          "text": "3"
+        },
+        {
+          "key": "D",
+          "text": "4"
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Trace the stack operations",
+        "steps": [
+          "After three pushes, the stack from bottom to top is [1, 2, 3].",
+          "POP removes 3; PUSH(4) gives [1, 2, 4].",
+          "The next POP removes 4, leaving 2 at the top."
+        ],
+        "note": "A stack follows the Last-In, First-Out (LIFO) discipline."
+      }
+    },
+    {
+      "id": "GP-CS-011",
+      "paper_code": "CS",
+      "section_code": "CS-04",
+      "section_name": "Programming and Data Structures",
+      "topic_id": "CS-04-04",
+      "topic_name": "Trees and Heaps",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "What is the maximum number of nodes in a binary tree of height 3, when the root is at height 0?",
+      "options": [],
+      "answer_key": "15",
+      "answer_range": [
+        15.0,
+        15.0
+      ],
+      "solution": {
+        "title": "Maximum nodes in a binary tree",
+        "steps": [
+          "A full binary tree has at most 2^i nodes at level i.",
+          "For height 3, the maximum is 1 + 2 + 4 + 8.",
+          "The total is 15, equivalently 2^(3+1) − 1."
+        ],
+        "note": "This question defines height as the number of edges on the longest root-to-leaf path."
+      }
+    },
+    {
+      "id": "GP-CS-012",
+      "paper_code": "CS",
+      "section_code": "CS-04",
+      "section_name": "Programming and Data Structures",
+      "topic_id": "CS-04-05",
+      "topic_name": "Graphs",
+      "difficulty": "Advanced",
+      "question_type": "MSQ",
+      "marks": 2,
+      "prompt": "Which statements are always true for an undirected simple graph with n vertices and m edges? Select all that apply.",
+      "options": [
+        {
+          "key": "A",
+          "text": "The sum of all vertex degrees equals 2m."
+        },
+        {
+          "key": "B",
+          "text": "Every vertex has degree at most n − 1."
+        },
+        {
+          "key": "C",
+          "text": "The graph can have more than n(n − 1)/2 edges."
+        },
+        {
+          "key": "D",
+          "text": "A tree with n vertices has n − 1 edges."
+        }
+      ],
+      "answer_key": "A;B;D",
+      "answer_range": null,
+      "solution": {
+        "title": "Basic graph properties",
+        "steps": [
+          "By the handshaking lemma, each edge contributes 2 to the sum of degrees, giving 2m.",
+          "In a simple graph, a vertex can connect to at most the other n − 1 vertices.",
+          "A simple graph has at most n(n − 1)/2 edges, so C is false. A tree has n − 1 edges."
+        ],
+        "note": "The simple-graph assumption rules out loops and parallel edges."
+      }
+    },
+    {
+      "id": "GP-CS-013",
+      "paper_code": "CS",
+      "section_code": "CS-05",
+      "section_name": "Algorithms",
+      "topic_id": "CS-05-02",
+      "topic_name": "Asymptotic Complexity",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "For sufficiently large n, which function grows fastest?",
+      "options": [
+        {
+          "key": "A",
+          "text": "n log n"
+        },
+        {
+          "key": "B",
+          "text": "n^1.5"
+        },
+        {
+          "key": "C",
+          "text": "n^2"
+        },
+        {
+          "key": "D",
+          "text": "2^n"
+        }
+      ],
+      "answer_key": "D",
+      "answer_range": null,
+      "solution": {
+        "title": "Compare asymptotic growth",
+        "steps": [
+          "Polynomial functions such as n^2 grow slower than exponential functions.",
+          "For any fixed k, 2^n eventually dominates n^k.",
+          "Therefore 2^n grows fastest among the listed functions."
+        ],
+        "note": "Asymptotic comparisons describe growth as n tends to infinity."
+      }
+    },
+    {
+      "id": "GP-CS-014",
+      "paper_code": "CS",
+      "section_code": "CS-05",
+      "section_name": "Algorithms",
+      "topic_id": "CS-05-03",
+      "topic_name": "Algorithm Design Techniques",
+      "difficulty": "Intermediate",
+      "question_type": "NAT",
+      "marks": 2,
+      "prompt": "A recurrence is T(n) = 2T(n/2) + n log₂n, with T(1) = Θ(1). In the asymptotic solution Θ(n(log n)^k), find k.",
+      "options": [],
+      "answer_key": "2",
+      "answer_range": [
+        2.0,
+        2.0
+      ],
+      "solution": {
+        "title": "Master theorem with a logarithmic factor",
+        "steps": [
+          "Here a = 2, b = 2, so n^(log_b a) = n.",
+          "The non-recursive term is f(n) = n log n, which matches n log^1 n.",
+          "The equal-growth case adds one logarithmic power, giving Θ(n log^2 n). Thus k = 2."
+        ],
+        "note": "Logarithm bases do not affect asymptotic order."
+      }
+    },
+    {
+      "id": "GP-CS-015",
+      "paper_code": "CS",
+      "section_code": "CS-05",
+      "section_name": "Algorithms",
+      "topic_id": "CS-05-04",
+      "topic_name": "Graph Algorithms",
+      "difficulty": "Advanced",
+      "question_type": "MSQ",
+      "marks": 2,
+      "prompt": "Which statements about Dijkstra’s single-source shortest-path algorithm are correct? Select all that apply.",
+      "options": [
+        {
+          "key": "A",
+          "text": "It uses a greedy selection of the next closest unsettled vertex."
+        },
+        {
+          "key": "B",
+          "text": "It is correct for graphs with non-negative edge weights."
+        },
+        {
+          "key": "C",
+          "text": "It correctly handles arbitrary negative-weight edges in all cases."
+        },
+        {
+          "key": "D",
+          "text": "With a binary heap and adjacency lists, a common time bound is O((V + E) log V)."
+        }
+      ],
+      "answer_key": "A;B;D",
+      "answer_range": null,
+      "solution": {
+        "title": "Dijkstra’s algorithm assumptions and complexity",
+        "steps": [
+          "Dijkstra repeatedly selects the unsettled vertex with the smallest tentative distance.",
+          "The algorithm relies on non-negative edge weights for its greedy correctness argument.",
+          "It is not valid for arbitrary negative weights. With a binary heap and adjacency lists, O((V + E) log V) is a common bound."
+        ],
+        "note": "Bellman–Ford is suitable when negative edges are allowed and no reachable negative cycle affects the result."
+      }
+    },
+    {
+      "id": "GP-CS-016",
+      "paper_code": "CS",
+      "section_code": "CS-06",
+      "section_name": "Theory of Computation",
+      "topic_id": "CS-06-01",
+      "topic_name": "Regular Expressions and Finite Automata",
+      "difficulty": "Advanced",
+      "question_type": "NAT",
+      "marks": 2,
+      "prompt": "What is the minimum number of states in a complete DFA over {0,1} that accepts exactly the strings ending in 01?",
+      "options": [],
+      "answer_key": "3",
+      "answer_range": [
+        3.0,
+        3.0
+      ],
+      "solution": {
+        "title": "DFA state memory",
+        "steps": [
+          "The machine must distinguish strings whose current suffix is irrelevant, ends in 0, or ends in 01.",
+          "These three situations require distinct states to decide acceptance after any continuation.",
+          "A three-state DFA is sufficient and minimal."
+        ],
+        "note": "A state can be viewed as the relevant suffix information retained by the automaton."
+      }
+    },
+    {
+      "id": "GP-CS-017",
+      "paper_code": "CS",
+      "section_code": "CS-06",
+      "section_name": "Theory of Computation",
+      "topic_id": "CS-06-02",
+      "topic_name": "Context-Free Grammars and Push-Down Automata",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "What language is generated by the grammar S → aSb | ε?",
+      "options": [
+        {
+          "key": "A",
+          "text": "All strings over {a,b}"
+        },
+        {
+          "key": "B",
+          "text": "{aⁿbⁿ | n ≥ 0}"
+        },
+        {
+          "key": "C",
+          "text": "{aⁿbᵐ | n,m ≥ 0}"
+        },
+        {
+          "key": "D",
+          "text": "All palindromes over {a,b}"
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Derive strings from the grammar",
+        "steps": [
+          "The production S → ε generates the empty string for n = 0.",
+          "Each use of S → aSb adds one a at the beginning and one b at the end.",
+          "Thus the generated strings have n a symbols followed by n b symbols."
+        ],
+        "note": "The language is context-free but not regular."
+      }
+    },
+    {
+      "id": "GP-CS-018",
+      "paper_code": "CS",
+      "section_code": "CS-06",
+      "section_name": "Theory of Computation",
+      "topic_id": "CS-06-03",
+      "topic_name": "Formal Languages and Pumping Lemma",
+      "difficulty": "Advanced",
+      "question_type": "MSQ",
+      "marks": 2,
+      "prompt": "Which statements about the pumping lemma for regular languages are correct? Select all that apply.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Every regular language satisfies the pumping lemma."
+        },
+        {
+          "key": "B",
+          "text": "Satisfying the pumping lemma is sufficient to prove that a language is regular."
+        },
+        {
+          "key": "C",
+          "text": "The lemma can be used to prove that some languages are not regular."
+        },
+        {
+          "key": "D",
+          "text": "The pumping length depends only on the particular string selected by the student."
+        }
+      ],
+      "answer_key": "A;C",
+      "answer_range": null,
+      "solution": {
+        "title": "What the pumping lemma proves",
+        "steps": [
+          "The pumping lemma is a necessary property of every regular language.",
+          "A contradiction to the lemma can prove that a language is not regular.",
+          "The converse is not true: satisfying the lemma alone does not prove regularity. The pumping length is associated with the language/automaton, not chosen per string."
+        ],
+        "note": "Use the quantifier order carefully in pumping-lemma proofs."
+      }
+    },
+    {
+      "id": "GP-CS-019",
+      "paper_code": "CS",
+      "section_code": "CS-07",
+      "section_name": "Compiler Design",
+      "topic_id": "CS-07-01",
+      "topic_name": "Lexical Analysis",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "Assume whitespace is ignored and each punctuation symbol is a separate token. How many tokens are in the statement `sum = a + b;`?",
+      "options": [],
+      "answer_key": "6",
+      "answer_range": [
+        6.0,
+        6.0
+      ],
+      "solution": {
+        "title": "Count lexical tokens",
+        "steps": [
+          "The identifiers are sum, a and b: three tokens.",
+          "The assignment operator = and arithmetic operator + add two tokens.",
+          "The semicolon adds one token. Total = 3 + 2 + 1 = 6."
+        ],
+        "note": "A token is a category/lexeme recognized by the lexical analyser."
+      }
+    },
+    {
+      "id": "GP-CS-020",
+      "paper_code": "CS",
+      "section_code": "CS-07",
+      "section_name": "Compiler Design",
+      "topic_id": "CS-07-02",
+      "topic_name": "Parsing",
+      "difficulty": "Intermediate",
+      "question_type": "MCQ",
+      "marks": 2,
+      "prompt": "For the grammar E → E + T | T, T → id, which parsing approach cannot directly handle the left-recursive E production without grammar transformation?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Predictive recursive-descent parsing"
+        },
+        {
+          "key": "B",
+          "text": "LR parsing"
+        },
+        {
+          "key": "C",
+          "text": "Bottom-up shift-reduce parsing"
+        },
+        {
+          "key": "D",
+          "text": "Canonical LR parsing"
+        }
+      ],
+      "answer_key": "A",
+      "answer_range": null,
+      "solution": {
+        "title": "Left recursion and predictive parsing",
+        "steps": [
+          "A recursive-descent procedure for E would call E again before consuming input.",
+          "This creates non-terminating left recursion in a top-down predictive parser.",
+          "Eliminating left recursion or transforming the grammar is required. LR parsers can handle this form."
+        ],
+        "note": "Left recursion is a grammar property that is especially problematic for naive top-down parsing."
+      }
+    },
+    {
+      "id": "GP-CS-021",
+      "paper_code": "CS",
+      "section_code": "CS-07",
+      "section_name": "Compiler Design",
+      "topic_id": "CS-07-06",
+      "topic_name": "Local Optimisation and Data-Flow Analysis",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "Consider `t1 = a*b; t2 = a*b;`. Which compiler optimisation can replace the second computation with reuse of t1, assuming a and b are unchanged?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dead-code elimination"
+        },
+        {
+          "key": "B",
+          "text": "Common subexpression elimination"
+        },
+        {
+          "key": "C",
+          "text": "Loop unrolling"
+        },
+        {
+          "key": "D",
+          "text": "Strength reduction"
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Common subexpression elimination",
+        "steps": [
+          "The expression a*b appears twice.",
+          "Because neither operand changes between the two evaluations, the second result is identical.",
+          "The compiler can reuse t1 instead of computing a*b again."
+        ],
+        "note": "The optimisation is only valid when the expression has no intervening side effects and its operands remain unchanged."
+      }
+    },
+    {
+      "id": "GP-CS-022",
+      "paper_code": "CS",
+      "section_code": "CS-08",
+      "section_name": "Operating System",
+      "topic_id": "CS-08-06",
+      "topic_name": "CPU and I/O Scheduling",
+      "difficulty": "Intermediate",
+      "question_type": "NAT",
+      "marks": 2,
+      "prompt": "Two processes P1 and P2 arrive at time 0. Their CPU bursts are 4 ms and 3 ms respectively. Round Robin uses a quantum of 2 ms and runs P1 first. Ignore context-switch overhead. Find the average turnaround time in ms.",
+      "options": [],
+      "answer_key": "6.5",
+      "answer_range": [
+        6.49,
+        6.51
+      ],
+      "solution": {
+        "title": "Round Robin schedule",
+        "steps": [
+          "P1 runs from 0–2; P2 runs from 2–4.",
+          "P1 runs from 4–6 and has 0 ms remaining; P2 runs from 6–7 and completes.",
+          "Completion/turnaround times are P1 = 6 ms and P2 = 7 ms.",
+          "Average turnaround = (6 + 7)/2 = 6.5 ms."
+        ],
+        "note": "Check each process remaining burst after every quantum. The accepted value is 6.5 ms."
+      }
+    },
+    {
+      "id": "GP-CS-023",
+      "paper_code": "CS",
+      "section_code": "CS-08",
+      "section_name": "Operating System",
+      "topic_id": "CS-08-05",
+      "topic_name": "Deadlock",
+      "difficulty": "Beginner",
+      "question_type": "MSQ",
+      "marks": 2,
+      "prompt": "Which are the four necessary Coffman conditions for deadlock? Select all that apply.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Mutual exclusion"
+        },
+        {
+          "key": "B",
+          "text": "Hold and wait"
+        },
+        {
+          "key": "C",
+          "text": "Circular wait"
+        },
+        {
+          "key": "D",
+          "text": "Preemption is always allowed"
+        }
+      ],
+      "answer_key": "A;B;C",
+      "answer_range": null,
+      "solution": {
+        "title": "Coffman conditions",
+        "steps": [
+          "The four necessary conditions are mutual exclusion, hold and wait, no preemption, and circular wait.",
+          "Options A, B and C are three of these conditions.",
+          "Option D is false: no preemption, rather than preemption always being allowed, is the required condition."
+        ],
+        "note": "A deadlock requires all four conditions to hold simultaneously."
+      }
+    },
+    {
+      "id": "GP-CS-024",
+      "paper_code": "CS",
+      "section_code": "CS-08",
+      "section_name": "Operating System",
+      "topic_id": "CS-08-04",
+      "topic_name": "Concurrency and Synchronization",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "A counting semaphore is initialized to 3. Five processes each execute one successful wait operation and none executes signal. How many processes can be blocked after all five wait operations have been issued?",
+      "options": [],
+      "answer_key": "2",
+      "answer_range": [
+        2.0,
+        2.0
+      ],
+      "solution": {
+        "title": "Counting semaphore permits",
+        "steps": [
+          "The initial count represents three available permits.",
+          "The first three wait operations consume the permits and proceed.",
+          "The remaining two wait operations cannot proceed and block."
+        ],
+        "note": "This assumes each wait is issued by a distinct process and no signal occurs."
+      }
+    },
+    {
+      "id": "GP-CS-025",
+      "paper_code": "CS",
+      "section_code": "CS-09",
+      "section_name": "Databases",
+      "topic_id": "CS-09-02",
+      "topic_name": "Relational Model",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "For relation R(A,B,C) with functional dependencies A → B and B → C, which is a candidate key?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A"
+        },
+        {
+          "key": "B",
+          "text": "B"
+        },
+        {
+          "key": "C",
+          "text": "C"
+        },
+        {
+          "key": "D",
+          "text": "B,C"
+        }
+      ],
+      "answer_key": "A",
+      "answer_range": null,
+      "solution": {
+        "title": "Find the attribute closure",
+        "steps": [
+          "A⁺ initially contains A.",
+          "Using A → B, add B; using B → C, add C.",
+          "A⁺ = {A, B, C}, so A is a superkey. Since A is a single attribute, it is minimal and therefore a candidate key."
+        ],
+        "note": "A candidate key is a minimal superkey."
+      }
+    },
+    {
+      "id": "GP-CS-026",
+      "paper_code": "CS",
+      "section_code": "CS-09",
+      "section_name": "Databases",
+      "topic_id": "CS-09-03",
+      "topic_name": "Integrity Constraints and Normal Forms",
+      "difficulty": "Advanced",
+      "question_type": "MSQ",
+      "marks": 2,
+      "prompt": "Which statements about Third Normal Form (3NF) are correct? Select all that apply.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Every non-prime attribute is non-transitively dependent on every candidate key."
+        },
+        {
+          "key": "B",
+          "text": "For every non-trivial FD X → A, X is a superkey or A is prime."
+        },
+        {
+          "key": "C",
+          "text": "Every relation in BCNF is also in 3NF."
+        },
+        {
+          "key": "D",
+          "text": "Every relation in 3NF must be in BCNF."
+        }
+      ],
+      "answer_key": "B;C",
+      "answer_range": null,
+      "solution": {
+        "title": "3NF definition and relation to BCNF",
+        "steps": [
+          "A formal 3NF condition says that for every non-trivial FD X → A, X is a superkey or A is a prime attribute.",
+          "BCNF requires the determinant X to be a superkey for every non-trivial FD.",
+          "Therefore BCNF implies 3NF, but 3NF does not necessarily imply BCNF."
+        ],
+        "note": "Option A is an informal description that can be imprecise; use the formal FD definition when checking 3NF."
+      }
+    },
+    {
+      "id": "GP-CS-027",
+      "paper_code": "CS",
+      "section_code": "CS-09",
+      "section_name": "Databases",
+      "topic_id": "CS-09-05",
+      "topic_name": "Transactions and Concurrency Control",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "Which ACID property ensures that a committed transaction’s effects survive a system crash?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Atomicity"
+        },
+        {
+          "key": "B",
+          "text": "Consistency"
+        },
+        {
+          "key": "C",
+          "text": "Isolation"
+        },
+        {
+          "key": "D",
+          "text": "Durability"
+        }
+      ],
+      "answer_key": "D",
+      "answer_range": null,
+      "solution": {
+        "title": "ACID durability",
+        "steps": [
+          "Atomicity concerns all-or-nothing execution.",
+          "Consistency preserves database constraints; isolation controls concurrent interference.",
+          "Durability ensures committed changes persist despite failures."
+        ],
+        "note": "Durability is commonly supported by logging and stable storage."
+      }
+    },
+    {
+      "id": "GP-CS-028",
+      "paper_code": "CS",
+      "section_code": "CS-10",
+      "section_name": "Computer Networks",
+      "topic_id": "CS-10-05",
+      "topic_name": "IPv4",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "An IPv4 subnet has prefix length /26. Assuming conventional network and broadcast addresses are unavailable to hosts, how many usable host addresses does it contain?",
+      "options": [],
+      "answer_key": "62",
+      "answer_range": [
+        62.0,
+        62.0
+      ],
+      "solution": {
+        "title": "IPv4 subnet host count",
+        "steps": [
+          "A /26 prefix leaves 32 − 26 = 6 host bits.",
+          "The subnet contains 2^6 = 64 total addresses.",
+          "Subtract the network and broadcast addresses: 64 − 2 = 62 usable host addresses."
+        ],
+        "note": "This uses the conventional IPv4 subnet rule for ordinary subnets."
+      }
+    },
+    {
+      "id": "GP-CS-029",
+      "paper_code": "CS",
+      "section_code": "CS-10",
+      "section_name": "Computer Networks",
+      "topic_id": "CS-10-02",
+      "topic_name": "Switching and Performance Metrics",
+      "difficulty": "Intermediate",
+      "question_type": "NAT",
+      "marks": 2,
+      "prompt": "In a stop-and-wait protocol, a frame transmission takes 1 ms and the round-trip propagation time is 9 ms. Ignore ACK transmission time and processing delays. What is the link utilisation as a fraction?",
+      "options": [],
+      "answer_key": "0.1",
+      "answer_range": [
+        0.099,
+        0.101
+      ],
+      "solution": {
+        "title": "Stop-and-wait utilisation",
+        "steps": [
+          "A successful cycle takes frame transmission time plus round-trip propagation: 1 + 9 = 10 ms.",
+          "The sender transmits useful data for 1 ms in each 10 ms cycle.",
+          "Utilisation = 1/10 = 0.1 (10%)."
+        ],
+        "note": "Assume no errors and a single outstanding frame."
+      }
+    },
+    {
+      "id": "GP-CS-030",
+      "paper_code": "CS",
+      "section_code": "CS-10",
+      "section_name": "Computer Networks",
+      "topic_id": "CS-10-06",
+      "topic_name": "TCP",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "A TCP receiver has correctly received all bytes through sequence number 1000. What cumulative acknowledgement number should it send for the next expected byte?",
+      "options": [
+        {
+          "key": "A",
+          "text": "999"
+        },
+        {
+          "key": "B",
+          "text": "1000"
+        },
+        {
+          "key": "C",
+          "text": "1001"
+        },
+        {
+          "key": "D",
+          "text": "2000"
+        }
+      ],
+      "answer_key": "C",
+      "answer_range": null,
+      "solution": {
+        "title": "TCP cumulative acknowledgement",
+        "steps": [
+          "TCP sequence numbers identify byte positions in the stream.",
+          "If byte 1000 has been received in order, the next expected byte is 1001.",
+          "The cumulative ACK therefore carries acknowledgement number 1001."
+        ],
+        "note": "TCP ACK numbers usually indicate the next byte expected."
+      }
+    }
+  ]
+}

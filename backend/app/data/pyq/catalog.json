@@ -1,0 +1,54 @@
+{
+  "paper_code": "CS",
+  "source_verified_on": "2026-11-06",
+  "archive_sources": [
+    {
+      "year": 2026,
+      "title": "GATE 2026 master question papers and final answer keys",
+      "url": "https://gate2026.iitg.ac.in/QPs-answer-keys.html",
+      "status": "interactive_metadata_imported"
+    },
+    {
+      "year": 2025,
+      "title": "GATE 2025 master question papers and final answer keys",
+      "url": "https://gate2025.iitr.ac.in/question-papers.html",
+      "status": "official_archive_link"
+    },
+    {
+      "year": 2024,
+      "title": "GATE 2024 downloads and previous-year question papers",
+      "url": "https://gate2024.iisc.ac.in/download/",
+      "status": "official_archive_link"
+    },
+    {
+      "year": 2023,
+      "title": "Official bulk/year-wise previous-paper archive",
+      "url": "https://gate2026.iitg.ac.in/download.html",
+      "status": "official_archive_link"
+    },
+    {
+      "year": 2022,
+      "title": "Official bulk/year-wise previous-paper archive",
+      "url": "https://gate2026.iitg.ac.in/download.html",
+      "status": "official_archive_link"
+    },
+    {
+      "year": 2021,
+      "title": "Official bulk/year-wise previous-paper archive",
+      "url": "https://gate2026.iitg.ac.in/download.html",
+      "status": "official_archive_link"
+    },
+    {
+      "year": "2007–2025",
+      "title": "Bulk download of GATE question papers",
+      "url": "https://gate2026.iitg.ac.in/download.html",
+      "status": "official_bulk_archive_link"
+    }
+  ],
+  "notes": [
+    "The interactive imported set in this release is GATE 2026 CS-1 and CS-2.",
+    "Other years are linked to official archives and are not represented as imported interactive questions yet.",
+    "Question wording and figures are not duplicated; students open the official master paper PDF.",
+    "Only selected questions have GATEPath original worked explanations at this stage. Remaining explanation status is pending editorial review."
+  ]
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f8f6" />
+  <meta name="description" content="Your personal GATEPath 2027 preparation workspace." />
+  <title>My workspace · GATEPath 2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/app.css" />
+  <script src="/static/app.js" defer></script>
+</head>
+<body class="workspace-body">
+  <a class="skip-link" href="#page-content">Skip to workspace</a>
+  <div class="workspace-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+      <a class="brand" href="/" aria-label="GATEPath home"><span class="brand-mark">G<span></span></span><span class="brand-name">GATEPath <small>2027 PREPARATION</small></span></a>
+      <div class="sidebar-label">YOUR WORKSPACE</div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-view="overview"><span data-icon="grid"></span><span>Overview</span></button>
+        <button class="nav-item" data-view="syllabus"><span data-icon="book"></span><span>Syllabus explorer</span></button>
+        <button class="nav-item" data-view="mindmaps"><span data-icon="nodes"></span><span>Mind maps</span><em>06</em></button>
+        <button class="nav-item" data-view="questions"><span data-icon="layers"></span><span>PYQ bank</span><em>07</em></button>
+        <button class="nav-item" data-view="practice"><span data-icon="target"></span><span>Practice</span><em>08</em></button>
+        <button class="nav-item" data-view="tests"><span data-icon="timer"></span><span>Mock tests</span><em>09</em></button>
+      </nav>
+      <div class="sidebar-label sidebar-label-spaced">STUDY TOOLS</div>
+      <nav class="sidebar-nav">
+        <button class="nav-item" data-view="planner"><span data-icon="calendar"></span><span>Study planner</span></button>
+        <button class="nav-item" data-view="revision"><span data-icon="repeat"></span><span>Revision centre</span><em>10</em></button>
+        <button class="nav-item" data-view="analytics"><span data-icon="chart"></span><span>Analytics</span><em>12</em></button>
+        <button class="nav-item" data-view="tutor"><span data-icon="sparkles"></span><span>AI GATE tutor</span><em>11</em></button>
+        <button class="nav-item" data-view="resources"><span data-icon="bookmark"></span><span>Study materials</span><em>05</em></button>
+        <button class="nav-item" data-view="community"><span data-icon="users"></span><span>Community</span><em>12</em></button>
+        <button class="nav-item" id="admin-nav-item" data-view="admin" hidden><span data-icon="shield"></span><span>Administration</span><em>12</em></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help"><span class="help-mark">✦</span><b>Keep your focus</b><p>One topic, one session, one step forward.</p><a href="https://gate2027.iitm.ac.in/" target="_blank" rel="noreferrer">Official GATE website ↗</a></div>
+        <div class="profile-mini"><span class="mini-avatar" id="account-avatar">GP</span><span class="profile-mini-copy"><b>Student</b><small>Loading account…</small></span><button data-action="logout" class="logout-button" aria-label="Sign out">↗</button></div>
+      </div>
+    </aside>
+
+    <main class="workspace-main">
+      <header class="topbar">
+        <button id="mobile-menu" class="icon-button mobile-menu-button" aria-label="Open navigation">☰</button>
+        <div class="breadcrumbs"><a href="/">GATEPath</a><span>/</span><b id="breadcrumb-current">Overview</b></div>
+        <div class="topbar-actions">
+          <label class="global-search-wrap"><span data-icon="search"></span><input type="search" id="global-search" placeholder="Search your workspace" aria-label="Search workspace"/><kbd>⌘ K</kbd></label>
+          <button class="icon-button" id="theme-toggle" aria-label="Toggle light or dark theme">◐</button>
+          <span class="topbar-user" id="account-name">Student</span>
+          <span class="topbar-avatar" aria-hidden="true" id="account-avatar-top">G</span>
+        </div>
+      </header>
+      <div id="page-content" class="page-content" aria-live="polite">
+        <div class="loading-state"><span class="loader"></span><span>Opening your preparation workspace…</span></div>
+      </div>
+      <footer class="workspace-footer"><span>GATEPath 2027 · Independent preparation platform</span><span>Always verify exam information on the official GATE website.</span></footer>
+    </main>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head"><div><span id="modal-eyebrow" class="eyebrow">WORKSPACE</span><h2 id="modal-title">Update</h2></div><button class="icon-button" data-action="close-modal" aria-label="Close dialog">×</button></div>
+      <div id="modal-body" class="modal-body"></div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,754 @@
+{
+  "paper_code": "CS",
+  "paper_name": "Computer Science and Information Technology",
+  "syllabus_version": "GATE 2027",
+  "source_title": "GATE 2027 CS Computer Science and Information Technology syllabus (IIT Madras)",
+  "source_url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/CS_GATE2027_Syllabus.pdf",
+  "catalogue_url": "https://gate2027.iitm.ac.in/exam_papers_and_syllabus",
+  "source_published_by": "IIT Madras / GATE 2027 Organizing Institute",
+  "source_verified_on": "2026-11-05",
+  "content_status": "imported_verified",
+  "transcription_note": "Section titles and topic scope were transcribed from the official two-page CS syllabus PDF. Topic and subtopic boundaries are a navigational breakdown of the official statements; subtopic labels do not add syllabus scope.",
+  "common_section": {
+    "code": "GA",
+    "name": "General Aptitude",
+    "marks": 15,
+    "content_status": "source_linked_pending_import",
+    "official_url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+    "description": "Common to all GATE papers. The detailed GA syllabus is maintained in the official shared General Aptitude PDF and has not yet been transcribed into topic-level cards."
+  },
+  "paper_specific_marks": 85,
+  "sections": [
+    {
+      "code": "CS-01",
+      "name": "Engineering Mathematics",
+      "order": 1,
+      "topics": [
+        {
+          "id": "CS-01-01",
+          "name": "Discrete Mathematics",
+          "official_statement": "Propositional and first order logic. Sets, relations, functions, partial orders and lattices. Monoids, Groups. Graphs: connectivity, matching, colouring. Combinatorics: counting, recurrence relations, generating functions.",
+          "subtopics": [
+            "Propositional and first-order logic",
+            "Sets, relations and functions",
+            "Partial orders and lattices",
+            "Monoids and groups",
+            "Graph connectivity, matching and colouring",
+            "Counting, recurrence relations and generating functions"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-01-02",
+          "name": "Linear Algebra",
+          "official_statement": "Matrices, determinants, system of linear equations, eigenvalues and eigenvectors, LU decomposition.",
+          "subtopics": [
+            "Matrices and determinants",
+            "Systems of linear equations",
+            "Eigenvalues and eigenvectors",
+            "LU decomposition"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-01-03",
+          "name": "Calculus",
+          "official_statement": "Limits, continuity and differentiability, Maxima and minima, Mean value theorem, Integration.",
+          "subtopics": [
+            "Limits, continuity and differentiability",
+            "Maxima and minima",
+            "Mean value theorem",
+            "Integration"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-01-04",
+          "name": "Probability and Statistics",
+          "official_statement": "Random variables, Uniform, normal, exponential, Poisson and binomial distributions. Mean, median, mode and standard deviation. Conditional probability and Bayes theorem.",
+          "subtopics": [
+            "Random variables",
+            "Uniform, normal, exponential, Poisson and binomial distributions",
+            "Mean, median, mode and standard deviation",
+            "Conditional probability",
+            "Bayes theorem"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-02",
+      "name": "Digital Logic",
+      "order": 2,
+      "topics": [
+        {
+          "id": "CS-02-01",
+          "name": "Boolean Algebra and Minimization",
+          "official_statement": "Boolean algebra and minimization – algebraic technique, Karnaugh map, tabular method.",
+          "subtopics": [
+            "Boolean algebra",
+            "Algebraic minimization technique",
+            "Karnaugh map",
+            "Tabular method"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-02-02",
+          "name": "Combinational and Sequential Circuits",
+          "official_statement": "Design of combinational and sequential circuits.",
+          "subtopics": [
+            "Design of combinational circuits",
+            "Design of sequential circuits"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-02-03",
+          "name": "Number Representation and Arithmetic",
+          "official_statement": "Number representation and arithmetic (fixed and floating point).",
+          "subtopics": [
+            "Fixed-point number representation and arithmetic",
+            "Floating-point number representation and arithmetic"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-03",
+      "name": "Computer Organization and Architecture",
+      "order": 3,
+      "topics": [
+        {
+          "id": "CS-03-01",
+          "name": "Instruction Set and Addressing Modes",
+          "official_statement": "Instruction set and addressing modes.",
+          "subtopics": [
+            "Instruction set",
+            "Addressing modes"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-03-02",
+          "name": "Arithmetic and Logic Unit",
+          "official_statement": "Design of arithmetic and logic unit (ALU).",
+          "subtopics": [
+            "ALU design"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-03-03",
+          "name": "Control Unit",
+          "official_statement": "Design of control unit – hardwired and microprogrammed.",
+          "subtopics": [
+            "Hardwired control unit",
+            "Microprogrammed control unit"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-03-04",
+          "name": "Memory Interfacing and Hierarchy",
+          "official_statement": "Memory interfacing and hierarchy: performance, cache memory mapping.",
+          "subtopics": [
+            "Memory interfacing",
+            "Memory hierarchy and performance",
+            "Cache memory mapping"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-03-05",
+          "name": "I/O Interface",
+          "official_statement": "I/O interface (interrupt and DMA).",
+          "subtopics": [
+            "Interrupts",
+            "Direct memory access (DMA)"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-03-06",
+          "name": "Instruction Pipelining",
+          "official_statement": "Instruction pipelining, pipeline hazards.",
+          "subtopics": [
+            "Instruction pipelining",
+            "Pipeline hazards"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-04",
+      "name": "Programming and Data Structures",
+      "order": 4,
+      "topics": [
+        {
+          "id": "CS-04-01",
+          "name": "Programming in C",
+          "official_statement": "Programming in C.",
+          "subtopics": [
+            "Programming in C"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-04-02",
+          "name": "Recursion",
+          "official_statement": "Recursion.",
+          "subtopics": [
+            "Recursion"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-04-03",
+          "name": "Linear Data Structures",
+          "official_statement": "Arrays, stacks, queues, linked lists.",
+          "subtopics": [
+            "Arrays",
+            "Stacks",
+            "Queues",
+            "Linked lists"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-04-04",
+          "name": "Trees and Heaps",
+          "official_statement": "Trees, binary search trees, binary heaps.",
+          "subtopics": [
+            "Trees",
+            "Binary search trees",
+            "Binary heaps"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-04-05",
+          "name": "Graphs",
+          "official_statement": "Graphs.",
+          "subtopics": [
+            "Graphs"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-05",
+      "name": "Algorithms",
+      "order": 5,
+      "topics": [
+        {
+          "id": "CS-05-01",
+          "name": "Searching, Sorting and Hashing",
+          "official_statement": "Searching, sorting, hashing.",
+          "subtopics": [
+            "Searching",
+            "Sorting",
+            "Hashing"
+          ],
+          "prerequisites": [
+            "CS-04-03",
+            "CS-04-04"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-05-02",
+          "name": "Asymptotic Complexity",
+          "official_statement": "Asymptotic worst case time and space complexity.",
+          "subtopics": [
+            "Worst-case time complexity",
+            "Worst-case space complexity"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-05-03",
+          "name": "Algorithm Design Techniques",
+          "official_statement": "Algorithm design techniques: greedy, dynamic programming and divide-and-conquer.",
+          "subtopics": [
+            "Greedy algorithms",
+            "Dynamic programming",
+            "Divide-and-conquer"
+          ],
+          "prerequisites": [
+            "CS-01-01"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-05-04",
+          "name": "Graph Algorithms",
+          "official_statement": "Graph traversals, minimum spanning trees, shortest paths.",
+          "subtopics": [
+            "Graph traversals",
+            "Minimum spanning trees",
+            "Shortest paths"
+          ],
+          "prerequisites": [
+            "CS-04-05"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-06",
+      "name": "Theory of Computation",
+      "order": 6,
+      "topics": [
+        {
+          "id": "CS-06-01",
+          "name": "Regular Expressions and Finite Automata",
+          "official_statement": "Regular expressions and finite automata.",
+          "subtopics": [
+            "Regular expressions",
+            "Finite automata"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-06-02",
+          "name": "Context-Free Grammars and Push-Down Automata",
+          "official_statement": "Context-free grammars and push-down automata.",
+          "subtopics": [
+            "Context-free grammars",
+            "Push-down automata"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-06-03",
+          "name": "Formal Languages and Pumping Lemma",
+          "official_statement": "Regular and context-free languages, pumping lemma.",
+          "subtopics": [
+            "Regular languages",
+            "Context-free languages",
+            "Pumping lemma"
+          ],
+          "prerequisites": [
+            "CS-01-01"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-06-04",
+          "name": "Turing Machines and Undecidability",
+          "official_statement": "Turing machines and undecidability.",
+          "subtopics": [
+            "Turing machines",
+            "Undecidability"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-07",
+      "name": "Compiler Design",
+      "order": 7,
+      "topics": [
+        {
+          "id": "CS-07-01",
+          "name": "Lexical Analysis",
+          "official_statement": "Lexical analysis.",
+          "subtopics": [
+            "Lexical analysis"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-07-02",
+          "name": "Parsing",
+          "official_statement": "Parsing.",
+          "subtopics": [
+            "Parsing"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-07-03",
+          "name": "Syntax-Directed Translation",
+          "official_statement": "Syntax-directed translation.",
+          "subtopics": [
+            "Syntax-directed translation"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-07-04",
+          "name": "Runtime Environments",
+          "official_statement": "Runtime environments.",
+          "subtopics": [
+            "Runtime environments"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-07-05",
+          "name": "Intermediate Code Generation",
+          "official_statement": "Intermediate code generation.",
+          "subtopics": [
+            "Intermediate code generation"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-07-06",
+          "name": "Local Optimisation and Data-Flow Analysis",
+          "official_statement": "Local optimisation, Data flow analyses: constant propagation, liveness analysis, common sub expression elimination.",
+          "subtopics": [
+            "Local optimisation",
+            "Constant propagation",
+            "Liveness analysis",
+            "Common sub-expression elimination"
+          ],
+          "prerequisites": [
+            "CS-07-05"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-08",
+      "name": "Operating System",
+      "order": 8,
+      "topics": [
+        {
+          "id": "CS-08-01",
+          "name": "System Calls",
+          "official_statement": "System calls.",
+          "subtopics": [
+            "System calls"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-02",
+          "name": "Processes and Threads",
+          "official_statement": "Processes, threads.",
+          "subtopics": [
+            "Processes",
+            "Threads"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-03",
+          "name": "Inter-Process Communication",
+          "official_statement": "Inter-process communication.",
+          "subtopics": [
+            "Inter-process communication (IPC)"
+          ],
+          "prerequisites": [
+            "CS-08-02"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-04",
+          "name": "Concurrency and Synchronization",
+          "official_statement": "Concurrency and synchronization.",
+          "subtopics": [
+            "Concurrency",
+            "Synchronization"
+          ],
+          "prerequisites": [
+            "CS-08-02"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-05",
+          "name": "Deadlock",
+          "official_statement": "Deadlock.",
+          "subtopics": [
+            "Deadlock"
+          ],
+          "prerequisites": [
+            "CS-08-04"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-06",
+          "name": "CPU and I/O Scheduling",
+          "official_statement": "CPU and I/O scheduling.",
+          "subtopics": [
+            "CPU scheduling",
+            "I/O scheduling"
+          ],
+          "prerequisites": [
+            "CS-08-02"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-07",
+          "name": "Memory Management and Virtual Memory",
+          "official_statement": "Memory management and virtual memory.",
+          "subtopics": [
+            "Memory management",
+            "Virtual memory"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-08-08",
+          "name": "File Systems",
+          "official_statement": "File systems.",
+          "subtopics": [
+            "File systems"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-09",
+      "name": "Databases",
+      "order": 9,
+      "topics": [
+        {
+          "id": "CS-09-01",
+          "name": "ER Model",
+          "official_statement": "ER-model.",
+          "subtopics": [
+            "Entity-relationship model"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-09-02",
+          "name": "Relational Model",
+          "official_statement": "Relational model: relational algebra, tuple calculus, SQL.",
+          "subtopics": [
+            "Relational model",
+            "Relational algebra",
+            "Tuple calculus",
+            "SQL"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-09-03",
+          "name": "Integrity Constraints and Normal Forms",
+          "official_statement": "Integrity constraints, normal forms.",
+          "subtopics": [
+            "Integrity constraints",
+            "Normal forms"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-09-04",
+          "name": "File Organization and Indexing",
+          "official_statement": "File organization, indexing (e.g., B and B+ trees).",
+          "subtopics": [
+            "File organization",
+            "Indexing",
+            "B-trees and B+ trees"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-09-05",
+          "name": "Transactions and Concurrency Control",
+          "official_statement": "Transactions and concurrency control.",
+          "subtopics": [
+            "Transactions",
+            "Concurrency control"
+          ],
+          "prerequisites": [
+            "CS-09-02"
+          ],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "CS-10",
+      "name": "Computer Networks",
+      "order": 10,
+      "topics": [
+        {
+          "id": "CS-10-01",
+          "name": "Principles of Layering",
+          "official_statement": "Principles of Layering.",
+          "subtopics": [
+            "Principles of layering"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-10-02",
+          "name": "Switching and Performance Metrics",
+          "official_statement": "Basics of switching (circuit, packet and virtual circuit) and performance metrics.",
+          "subtopics": [
+            "Circuit switching",
+            "Packet switching",
+            "Virtual circuit switching",
+            "Performance metrics"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-10-03",
+          "name": "Data Link Layer",
+          "official_statement": "Data link layer: error detection, Medium Access Control, Ethernet.",
+          "subtopics": [
+            "Error detection",
+            "Medium Access Control (MAC)",
+            "Ethernet"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-10-04",
+          "name": "Routing",
+          "official_statement": "Distance vector and link state routing.",
+          "subtopics": [
+            "Distance-vector routing",
+            "Link-state routing"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-10-05",
+          "name": "IPv4",
+          "official_statement": "IPv4 - Fragmentation, CIDR Notation, Network Address Translation.",
+          "subtopics": [
+            "IPv4 fragmentation",
+            "CIDR notation",
+            "Network Address Translation (NAT)"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-10-06",
+          "name": "TCP",
+          "official_statement": "TCP- flow control and congestion control, socket API.",
+          "subtopics": [
+            "TCP flow control",
+            "TCP congestion control",
+            "Socket API"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "CS-10-07",
+          "name": "Application Layer Protocols",
+          "official_statement": "DNS and HTTP.",
+          "subtopics": [
+            "Domain Name System (DNS)",
+            "HTTP"
+          ],
+          "prerequisites": [],
+          "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    }
+  ]
+}
