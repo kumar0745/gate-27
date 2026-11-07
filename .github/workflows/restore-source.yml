@@ -3,11 +3,12 @@ on:
   push:
     branches: [main]
     paths:
-      - "release-payload/**"
+      - "release-payload/READY"
 permissions:
   contents: write
 jobs:
   restore-source:
+    if: github.event_name == 'push' && github.event.after != '0000000000000000000000000000000000000000'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,7 +19,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat release-payload/part-*.b64 | base64 --decode > /tmp/GATEPath_2027_Full_Application.zip
+          for i in $(seq -w 0 12); do
+            cat "release-payload/part-${i}-a.b64"
+            if [ -f "release-payload/part-${i}-b.b64" ]; then cat "release-payload/part-${i}-b.b64"; fi
+          done | base64 --decode > /tmp/GATEPath_2027_Full_Application.zip
           unzip -q /tmp/GATEPath_2027_Full_Application.zip -d /tmp/gatepath-release
           test -f /tmp/gatepath-release/GATEPath-2027/backend/app/main.py
           test -f /tmp/gatepath-release/GATEPath-2027/frontend/index.html
