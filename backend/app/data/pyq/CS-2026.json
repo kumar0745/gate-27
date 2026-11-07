@@ -6,7 +6,7 @@
   "source_publisher": "IIT Guwahati, GATE 2026 Organizing Institute",
   "source_verified_on": "2026-11-06",
   "content_version": "1.0.0",
-  "content_status": "official_keys_metadata_imported",
+  "content_status": "official_answer_key_metadata_with_cs_topic_and_general_aptitude_mapping",
   "content_policy": "Question wording and figures remain on official PDFs. GATEPath stores question identifiers, verified answer-key metadata, source locations and original editorial explanation notes. Imported answer keys are used to check student responses only after submission.",
   "sessions": [
     {
@@ -29,8 +29,8 @@
           "marks": 1,
           "answer_key": "B",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-VERBAL-01",
+          "topic_name": "Verbal Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -55,8 +55,8 @@
           "marks": 1,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-SPATIAL-01",
+          "topic_name": "Spatial Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -81,8 +81,8 @@
           "marks": 1,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -107,8 +107,8 @@
           "marks": 1,
           "answer_key": "D",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -133,8 +133,8 @@
           "marks": 1,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-ANALYTICAL-01",
+          "topic_name": "Analytical Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -159,8 +159,8 @@
           "marks": 2,
           "answer_key": "B",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-VERBAL-01",
+          "topic_name": "Verbal Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -185,8 +185,8 @@
           "marks": 2,
           "answer_key": "D",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-SPATIAL-01",
+          "topic_name": "Spatial Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -211,8 +211,8 @@
           "marks": 2,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -237,8 +237,8 @@
           "marks": 2,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-ANALYTICAL-01",
+          "topic_name": "Analytical Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -263,8 +263,8 @@
           "marks": 2,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
@@ -901,8 +901,8 @@
           "marks": 1,
           "answer_key": "3",
           "answer_range": [
-            3.0,
-            3.0
+            3,
+            3
           ],
           "topic_id": null,
           "topic_name": null,
@@ -930,8 +930,8 @@
           "marks": 1,
           "answer_key": "11",
           "answer_range": [
-            11.0,
-            11.0
+            11,
+            11
           ],
           "topic_id": null,
           "topic_name": null,
@@ -959,8 +959,8 @@
           "marks": 1,
           "answer_key": "9",
           "answer_range": [
-            9.0,
-            9.0
+            9,
+            9
           ],
           "topic_id": null,
           "topic_name": null,
@@ -988,8 +988,8 @@
           "marks": 1,
           "answer_key": "6",
           "answer_range": [
-            6.0,
-            6.0
+            6,
+            6
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1563,8 +1563,8 @@
           "marks": 2,
           "answer_key": "34",
           "answer_range": [
-            34.0,
-            34.0
+            34,
+            34
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1650,8 +1650,8 @@
           "marks": 2,
           "answer_key": "95",
           "answer_range": [
-            95.0,
-            95.0
+            95,
+            95
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1679,8 +1679,8 @@
           "marks": 2,
           "answer_key": "65536",
           "answer_range": [
-            65536.0,
-            65536.0
+            65536,
+            65536
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1708,8 +1708,8 @@
           "marks": 2,
           "answer_key": "7",
           "answer_range": [
-            7.0,
-            7.0
+            7,
+            7
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1737,8 +1737,8 @@
           "marks": 2,
           "answer_key": "4",
           "answer_range": [
-            4.0,
-            4.0
+            4,
+            4
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1795,8 +1795,8 @@
           "marks": 2,
           "answer_key": "6",
           "answer_range": [
-            6.0,
-            6.0
+            6,
+            6
           ],
           "topic_id": null,
           "topic_name": null,
@@ -1833,8 +1833,8 @@
           "marks": 1,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-VERBAL-01",
+          "topic_name": "Verbal Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -1859,8 +1859,8 @@
           "marks": 1,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-SPATIAL-01",
+          "topic_name": "Spatial Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -1885,8 +1885,8 @@
           "marks": 1,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -1911,8 +1911,8 @@
           "marks": 1,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -1937,8 +1937,8 @@
           "marks": 1,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-ANALYTICAL-01",
+          "topic_name": "Analytical Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -1963,8 +1963,8 @@
           "marks": 2,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-ANALYTICAL-01",
+          "topic_name": "Analytical Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -1989,8 +1989,8 @@
           "marks": 2,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-SPATIAL-01",
+          "topic_name": "Spatial Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -2015,8 +2015,8 @@
           "marks": 2,
           "answer_key": "A",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-ANALYTICAL-01",
+          "topic_name": "Analytical Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -2041,8 +2041,8 @@
           "marks": 2,
           "answer_key": "B",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-SPATIAL-01",
+          "topic_name": "Spatial Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -2067,8 +2067,8 @@
           "marks": 2,
           "answer_key": "C",
           "answer_range": null,
-          "topic_id": null,
-          "topic_name": null,
+          "topic_id": "GA-QUANT-01",
+          "topic_name": "Quantitative Aptitude",
           "editorial_label": null,
           "pdf_page": null,
           "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
@@ -2587,8 +2587,8 @@
           "marks": 1,
           "answer_key": "3",
           "answer_range": [
-            3.0,
-            3.0
+            3,
+            3
           ],
           "topic_id": null,
           "topic_name": null,
@@ -2616,8 +2616,8 @@
           "marks": 1,
           "answer_key": "24",
           "answer_range": [
-            24.0,
-            24.0
+            24,
+            24
           ],
           "topic_id": null,
           "topic_name": null,
@@ -2645,8 +2645,8 @@
           "marks": 1,
           "answer_key": "3",
           "answer_range": [
-            3.0,
-            3.0
+            3,
+            3
           ],
           "topic_id": null,
           "topic_name": null,
@@ -2674,8 +2674,8 @@
           "marks": 1,
           "answer_key": "4094",
           "answer_range": [
-            4094.0,
-            4094.0
+            4094,
+            4094
           ],
           "topic_id": null,
           "topic_name": null,
@@ -2732,8 +2732,8 @@
           "marks": 1,
           "answer_key": "13",
           "answer_range": [
-            13.0,
-            13.0
+            13,
+            13
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3203,8 +3203,8 @@
           "marks": 2,
           "answer_key": "16417",
           "answer_range": [
-            16417.0,
-            16417.0
+            16417,
+            16417
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3232,8 +3232,8 @@
           "marks": 2,
           "answer_key": "1536",
           "answer_range": [
-            1536.0,
-            1536.0
+            1536,
+            1536
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3261,8 +3261,8 @@
           "marks": 2,
           "answer_key": "3",
           "answer_range": [
-            3.0,
-            3.0
+            3,
+            3
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3290,8 +3290,8 @@
           "marks": 2,
           "answer_key": "128",
           "answer_range": [
-            128.0,
-            128.0
+            128,
+            128
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3348,8 +3348,8 @@
           "marks": 2,
           "answer_key": "4",
           "answer_range": [
-            4.0,
-            4.0
+            4,
+            4
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3377,8 +3377,8 @@
           "marks": 2,
           "answer_key": "6",
           "answer_range": [
-            6.0,
-            6.0
+            6,
+            6
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3406,8 +3406,8 @@
           "marks": 2,
           "answer_key": "9",
           "answer_range": [
-            9.0,
-            9.0
+            9,
+            9
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3435,8 +3435,8 @@
           "marks": 2,
           "answer_key": "1",
           "answer_range": [
-            1.0,
-            1.0
+            1,
+            1
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3464,8 +3464,8 @@
           "marks": 2,
           "answer_key": "48",
           "answer_range": [
-            48.0,
-            48.0
+            48,
+            48
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3522,8 +3522,8 @@
           "marks": 2,
           "answer_key": "40",
           "answer_range": [
-            40.0,
-            40.0
+            40,
+            40
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3551,8 +3551,8 @@
           "marks": 2,
           "answer_key": "30",
           "answer_range": [
-            30.0,
-            30.0
+            30,
+            30
           ],
           "topic_id": null,
           "topic_name": null,
@@ -3570,5 +3570,6 @@
       ]
     }
   ],
-  "curated_explanations_count": 9
+  "curated_explanations_count": 9,
+  "ga_topic_mapping_note": "GATE 2026 General Aptitude items are categorized to the official four GA syllabus domains using their question paper topic/content. Original stems and diagrams remain linked in official PDFs and are not republished."
 }
