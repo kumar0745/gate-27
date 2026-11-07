@@ -61,7 +61,10 @@ def test_pyq_list_has_verified_metadata_but_does_not_leak_answer_keys(client):
     assert response.status_code == 200, response.text
     payload = response.json()
     assert payload["count"] == 130
-    assert payload["content_status"] == "official_keys_metadata_imported"
+    assert payload["content_status"] == "official_answer_key_metadata_with_cs_topic_and_general_aptitude_mapping"
+    ga_items = [item for item in payload["items"] if item.get("source_section_code") == "GA"]
+    assert len(ga_items) == 20
+    assert all(item.get("topic_id") in {"GA-VERBAL-01", "GA-QUANT-01", "GA-ANALYTICAL-01", "GA-SPATIAL-01"} for item in ga_items)
     item = next(item for item in payload["items"] if item["id"] == "G26-CS-1-Q16")
     assert item["question_type"] == "MCQ"
     assert item["marks"] == 1
