@@ -1,8 +1,8 @@
 {
   "paper_code": "CS",
   "paper_name": "Computer Science and Information Technology",
-  "content_version": "1.0.0",
-  "content_status": "original_practice_pilot",
+  "content_version": "1.1.0",
+  "content_status": "original_practice_pilot_cs_and_general_aptitude",
   "content_origin": "GATEPath-authored original practice questions; not official GATE questions or PYQs.",
   "editorial_status": "AI-drafted pilot content; academic review is required before public release.",
   "created_on": "2026-11-06",
@@ -1061,6 +1061,305 @@
         ],
         "note": "TCP ACK numbers usually indicate the next byte expected."
       }
+    },
+    {
+      "id": "GP-CS-GA-001",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-VERBAL-01",
+      "topic_name": "Verbal Aptitude",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "Choose the grammatically correct sentence.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Each of the modules have a separate test."
+        },
+        {
+          "key": "B",
+          "text": "Each of the modules has a separate test."
+        },
+        {
+          "key": "C",
+          "text": "Each of the module have a separate test."
+        },
+        {
+          "key": "D",
+          "text": "Each modules has a separate test."
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Subject–verb agreement",
+        "steps": [
+          "The subject head is “Each”, which is singular.",
+          "The prepositional phrase “of the modules” does not change the subject number.",
+          "Use the singular verb “has”."
+        ],
+        "note": "Identify the grammatical subject before choosing the verb."
+      }
+    },
+    {
+      "id": "GP-CS-GA-002",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-VERBAL-01",
+      "topic_name": "Reading comprehension",
+      "difficulty": "Intermediate",
+      "question_type": "MCQ",
+      "marks": 2,
+      "prompt": "A report says: “The new cache policy reduced average latency in the tested workload, but increased memory consumption.” Which conclusion is best supported?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The policy improves every workload."
+        },
+        {
+          "key": "B",
+          "text": "The policy reduced latency in the tested workload and had a memory trade-off."
+        },
+        {
+          "key": "C",
+          "text": "The policy reduced both latency and memory use."
+        },
+        {
+          "key": "D",
+          "text": "The policy has no disadvantages."
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Evidence-based inference",
+        "steps": [
+          "The statement explicitly limits the result to the tested workload.",
+          "It also states that memory consumption increased.",
+          "Only option B preserves both the scope and the trade-off."
+        ],
+        "note": "Do not generalise beyond the evidence in a comprehension passage."
+      }
+    },
+    {
+      "id": "GP-CS-GA-003",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-QUANT-01",
+      "topic_name": "Ratios and percentages",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "A test has 80 questions. A candidate attempts 75% of them. How many questions are attempted?",
+      "options": [],
+      "answer_key": "60",
+      "answer_range": [
+        60,
+        60
+      ],
+      "solution": {
+        "title": "Percentage calculation",
+        "steps": [
+          "75% = 0.75.",
+          "0.75 × 80 = 60."
+        ],
+        "note": "Convert the percentage to a fraction or decimal and multiply by the total."
+      }
+    },
+    {
+      "id": "GP-CS-GA-004",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-QUANT-01",
+      "topic_name": "Data interpretation",
+      "difficulty": "Intermediate",
+      "question_type": "MCQ",
+      "marks": 2,
+      "prompt": "A table lists the number of solved questions as 24, 30 and 36 for three successive weeks. What is the percentage increase from week 1 to week 3?",
+      "options": [
+        {
+          "key": "A",
+          "text": "25%"
+        },
+        {
+          "key": "B",
+          "text": "40%"
+        },
+        {
+          "key": "C",
+          "text": "50%"
+        },
+        {
+          "key": "D",
+          "text": "60%"
+        }
+      ],
+      "answer_key": "C",
+      "answer_range": null,
+      "solution": {
+        "title": "Percentage increase",
+        "steps": [
+          "Change = 36 − 24 = 12.",
+          "The original value is 24.",
+          "Percentage increase = 12/24 × 100 = 50%."
+        ],
+        "note": "Use the first value as the denominator."
+      }
+    },
+    {
+      "id": "GP-CS-GA-005",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-ANALYTICAL-01",
+      "topic_name": "Logical deduction",
+      "difficulty": "Intermediate",
+      "question_type": "MCQ",
+      "marks": 2,
+      "prompt": "All indexed files are searchable. No encrypted archive is an indexed file. Which statement must be true?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Every searchable file is an indexed file."
+        },
+        {
+          "key": "B",
+          "text": "No encrypted archive is searchable."
+        },
+        {
+          "key": "C",
+          "text": "Some indexed files are encrypted archives."
+        },
+        {
+          "key": "D",
+          "text": "Every indexed file is searchable."
+        }
+      ],
+      "answer_key": "D",
+      "answer_range": null,
+      "solution": {
+        "title": "Set inclusion",
+        "steps": [
+          "“All indexed files are searchable” states that the indexed-file set is a subset of the searchable-file set.",
+          "The second premise says encrypted archives do not belong to the indexed-file set.",
+          "Option D restates the first premise."
+        ],
+        "note": "Do not reverse an implication."
+      }
+    },
+    {
+      "id": "GP-CS-GA-006",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-ANALYTICAL-01",
+      "topic_name": "Numerical relations",
+      "difficulty": "Beginner",
+      "question_type": "NAT",
+      "marks": 1,
+      "prompt": "Find the next term: 3, 7, 15, 31, ____.",
+      "options": [],
+      "answer_key": "63",
+      "answer_range": [
+        63,
+        63
+      ],
+      "solution": {
+        "title": "Multiplicative pattern",
+        "steps": [
+          "Each term is twice the previous term plus one.",
+          "31 × 2 + 1 = 63."
+        ],
+        "note": "Check a proposed pattern against every given transition."
+      }
+    },
+    {
+      "id": "GP-CS-GA-007",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-SPATIAL-01",
+      "topic_name": "Spatial transformations",
+      "difficulty": "Beginner",
+      "question_type": "MCQ",
+      "marks": 1,
+      "prompt": "A triangle is translated five units upward without rotation or scaling. Which property is unchanged?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Its position"
+        },
+        {
+          "key": "B",
+          "text": "Its orientation and side lengths"
+        },
+        {
+          "key": "C",
+          "text": "Its distance from the origin"
+        },
+        {
+          "key": "D",
+          "text": "The coordinates of every vertex"
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Translation invariants",
+        "steps": [
+          "A translation adds the same displacement vector to each vertex.",
+          "Distances, angles, shape and orientation are preserved.",
+          "Position and coordinates change."
+        ],
+        "note": "Translation changes location but not the shape or orientation."
+      }
+    },
+    {
+      "id": "GP-CS-GA-008",
+      "paper_code": "CS",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_id": "GA-SPATIAL-01",
+      "topic_name": "2D and 3D patterns",
+      "difficulty": "Intermediate",
+      "question_type": "MCQ",
+      "marks": 2,
+      "prompt": "A cube is rotated in space without reflection. Which quantity must remain unchanged?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Which face is on the left"
+        },
+        {
+          "key": "B",
+          "text": "The cube’s edge length"
+        },
+        {
+          "key": "C",
+          "text": "The face currently visible from the front"
+        },
+        {
+          "key": "D",
+          "text": "The screen position of each face"
+        }
+      ],
+      "answer_key": "B",
+      "answer_range": null,
+      "solution": {
+        "title": "Rigid rotation",
+        "steps": [
+          "A rotation is a rigid transformation.",
+          "It changes orientation and projected position, not the dimensions of the cube.",
+          "The edge length remains fixed."
+        ],
+        "note": "A rigid rotation preserves distances and shape."
+      }
     }
-  ]
+  ],
+  "notice": "Original GATEPath practice items aligned to the official CS and General Aptitude scope. These are not official past-year questions."
 }

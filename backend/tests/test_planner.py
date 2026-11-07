@@ -56,7 +56,7 @@ def test_create_30_day_plan_uses_profile_hours_and_imported_cs_topics(client):
     plan = create_plan(client, plan_days=30, start_date="2026-11-06")
     assert plan["paper_code"] == "CS"
     assert plan["daily_hours"] == 5
-    assert plan["planned_topic_count"] == 52
+    assert plan["planned_topic_count"] == 56
     assert plan["unplanned_topic_count"] == 0
     assert plan["task_count"] > 100
     overview = client.get("/api/planner/overview?selected_date=2026-11-06").json()
@@ -70,7 +70,7 @@ def test_one_hour_plan_exposes_topics_that_do_not_fit_in_horizon(client):
     register(client, daily_hours=1)
     plan = create_plan(client, plan_days=30, daily_hours=1)
     assert plan["planned_topic_count"] == 18
-    assert plan["unplanned_topic_count"] == 34
+    assert plan["unplanned_topic_count"] == 38
     assert "remain outside this plan" in plan["capacity_note"]
     with database.get_connection() as conn:
         loads = conn.execute(
@@ -85,11 +85,9 @@ def test_plan_duration_is_limited_to_30_60_or_90_days(client):
     assert response.status_code == 422
 
 
-def test_paper_without_structured_syllabus_does_not_receive_invented_plan(client):
-    register(client, paper_code="DA")
-    response = client.post("/api/planner/plans", json={"plan_days": 30})
-    assert response.status_code == 409
-    assert "topic-level syllabus import" in response.json()["detail"]
+def test_non_cs_papers_cannot_receive_a_planner(client):
+    register(client)
+    assert client.post("/api/planner/plans", json={"paper_code":"DA", "plan_days":30}).status_code == 404
 
 
 def test_regenerating_plan_archives_previous_plan(client):
@@ -233,9 +231,6 @@ def test_planner_reserves_weekly_mock_days_and_respects_daily_capacity(client):
     assert "practice" not in types
 
 
-def test_pending_content_is_explicit_in_planner_overview_for_other_papers(client):
-    register(client, paper_code="DA")
-    overview = client.get("/api/planner/overview").json()
-    assert overview["plan"] is None
-    assert overview["content_available"] is False
-    assert "not yet been imported" in overview["message"]
+def test_planner_rejects_non_cs_paper_filters(client):
+    register(client)
+    assert client.get("/api/planner/overview?paper_code=DA").status_code == 404

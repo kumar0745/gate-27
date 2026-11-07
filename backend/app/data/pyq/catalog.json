@@ -1,54 +1,111 @@
 {
   "paper_code": "CS",
-  "source_verified_on": "2026-11-06",
+  "source_verified_on": "2026-11-07",
   "archive_sources": [
     {
       "year": 2026,
-      "title": "GATE 2026 master question papers and final answer keys",
-      "url": "https://gate2026.iitg.ac.in/QPs-answer-keys.html",
-      "status": "interactive_metadata_imported"
+      "title": "GATE 2026 Computer Science — CS-1 and CS-2",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "status": "official_paper_and_key_links",
+      "paper_links": [
+        {
+          "session": "CS-1",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS1.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/CS1_Keys.pdf"
+        },
+        {
+          "session": "CS-2",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/CS2.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/CS2_Keys.pdf"
+        }
+      ]
     },
     {
       "year": 2025,
-      "title": "GATE 2025 master question papers and final answer keys",
-      "url": "https://gate2025.iitr.ac.in/question-papers.html",
-      "status": "official_archive_link"
+      "title": "GATE 2025 Computer Science — CS-1 and CS-2",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "status": "official_paper_and_key_links",
+      "paper_links": [
+        {
+          "session": "CS-1",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/CS12025.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/2025_Key/CS1_Keys.pdf"
+        },
+        {
+          "session": "CS-2",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2025/CS22025.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/2025_Key/CS2_Keys.pdf"
+        }
+      ]
     },
     {
       "year": 2024,
-      "title": "GATE 2024 downloads and previous-year question papers",
-      "url": "https://gate2024.iisc.ac.in/download/",
-      "status": "official_archive_link"
+      "title": "GATE 2024 Computer Science — CS-1 and CS-2",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "status": "official_paper_and_key_links",
+      "paper_links": [
+        {
+          "session": "CS-1",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS124S5.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS1FinalAnswerKey.pdf"
+        },
+        {
+          "session": "CS-2",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS224S6.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/2024/CS2FinalAnswerKey.pdf"
+        }
+      ]
     },
     {
       "year": 2023,
-      "title": "Official bulk/year-wise previous-paper archive",
-      "url": "https://gate2026.iitg.ac.in/download.html",
-      "status": "official_archive_link"
+      "title": "GATE 2023 Computer Science",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "status": "official_paper_and_key_links",
+      "paper_links": [
+        {
+          "session": "CS",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2023/cs_2023.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2023/CS_ANS_GATE2023.pdf"
+        }
+      ]
     },
     {
       "year": 2022,
-      "title": "Official bulk/year-wise previous-paper archive",
-      "url": "https://gate2026.iitg.ac.in/download.html",
-      "status": "official_archive_link"
+      "title": "GATE 2022 Computer Science",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "status": "official_paper_and_key_links",
+      "paper_links": [
+        {
+          "session": "CS",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2022/cs_2022.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2022/cs_2022.pdf"
+        }
+      ]
     },
     {
       "year": 2021,
-      "title": "Official bulk/year-wise previous-paper archive",
-      "url": "https://gate2026.iitg.ac.in/download.html",
-      "status": "official_archive_link"
+      "title": "GATE 2021 Computer Science",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "status": "official_paper_and_key_links",
+      "paper_links": [
+        {
+          "session": "CS",
+          "paper_url": "https://gate2027.iitm.ac.in/static/doc/download/2021/cs_2021.pdf",
+          "answer_key_url": "https://gate2027.iitm.ac.in/static/doc/download/Answer_keys2021/cs_merged_2021.pdf"
+        }
+      ]
     },
     {
       "year": "2007–2025",
-      "title": "Bulk download of GATE question papers",
-      "url": "https://gate2026.iitg.ac.in/download.html",
+      "title": "Official bulk download of GATE question papers",
+      "url": "https://gate2027.iitm.ac.in/download",
       "status": "official_bulk_archive_link"
     }
   ],
   "notes": [
-    "The interactive imported set in this release is GATE 2026 CS-1 and CS-2.",
-    "Other years are linked to official archives and are not represented as imported interactive questions yet.",
-    "Question wording and figures are not duplicated; students open the official master paper PDF.",
-    "Only selected questions have GATEPath original worked explanations at this stage. Remaining explanation status is pending editorial review."
+    "GATEPath provides one track only: GATE paper CS — Computer Science and Information Technology.",
+    "Interactive answer-key metadata currently imported for GATE 2026 CS-1 and CS-2. Original question stems and figures are not republished; open the official paper PDF.",
+    "Direct official CS paper and answer-key PDFs are linked for 2021–2026. For any unavailable or changed archive link, use the official IIT Madras GATE 2027 download page.",
+    "GATEPath authored worked practice and mock questions are labelled separately and are not represented as official PYQs."
   ]
 }

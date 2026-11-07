@@ -2,16 +2,26 @@
   "source_title": "GATE 2027 Question Paper Pattern",
   "source_url": "https://gate2027.iitm.ac.in/question_paper_pattern",
   "organising_institute": "IIT Madras",
-  "verified_on": "2026-11-06",
+  "verified_on": "2026-11-07",
   "common": {
     "mode": "Computer Based Test (CBT)",
     "language": "English",
     "duration_minutes": 180,
     "total_questions": 65,
     "total_marks": 100,
-    "general_aptitude": {"questions": 10, "marks": 15},
-    "question_types": ["MCQ", "MSQ", "NAT"],
-    "question_marks": [1, 2],
+    "general_aptitude": {
+      "questions": 10,
+      "marks": 15
+    },
+    "question_types": [
+      "MCQ",
+      "MSQ",
+      "NAT"
+    ],
+    "question_marks": [
+      1,
+      2
+    ],
     "negative_marking": {
       "mcq_1_mark_wrong": -0.3333333333,
       "mcq_2_mark_wrong": -0.6666666667,
@@ -21,17 +31,11 @@
     }
   },
   "paper_classes": {
-    "engineering_mathematics_13": ["AE", "AG", "BM", "BT", "CE", "CH", "CS", "EC", "EE", "ES", "IN", "ME", "MN", "MT", "NM", "PE", "PI"],
-    "subject_85_no_engineering_mathematics_13": ["CY", "DA", "EY", "MA", "PH", "ST"],
-    "special_section_structure": {
-      "AR": {"common_subject_marks": 60, "optional_section_marks": 25, "choice": "Choose Architecture (B1) or Planning (B2) during the examination."},
-      "GE": {"common_subject_marks": 55, "optional_section_marks": 30, "choice": "Choose Surveying and Mapping (B1) or Image Processing and Analysis (B2) during the examination."},
-      "GG": {"common_subject_marks": 25, "optional_section_marks": 60, "choice": "Choose Geology (B1) or Geophysics (B2) at application."},
-      "RA": {"common_subject_marks": 60, "optional_section_marks": 25, "choice": "Choose Electrical (B1) or Mechanical (B2) during the examination."},
-      "XE": {"common_section": {"code": "XE0", "name": "Engineering Mathematics", "marks": 15}, "optional_sections_required": 2, "optional_section_marks_each": 35, "choice": "Choose any two optional sections during the examination."},
-      "XH": {"common_section": {"code": "XH0", "name": "Reasoning and Comprehension", "marks": 25}, "optional_sections_required": 1, "optional_section_marks": 60, "choice": "One optional section is selected at application."},
-      "XL": {"common_section": {"code": "XL0", "name": "Chemistry", "marks": 25}, "optional_sections_required": 2, "optional_section_marks_each": 30, "choice": "Choose any two optional sections during the examination."}
-    }
+    "engineering_mathematics_13": [
+      "CS"
+    ],
+    "subject_85_no_engineering_mathematics_13": [],
+    "special_section_structure": {}
   },
   "cs_mock_blueprint": {
     "paper_code": "CS",
@@ -39,10 +43,27 @@
     "total_marks": 100,
     "duration_minutes": 180,
     "sections": [
-      {"code": "GENERAL_APTITUDE", "name": "General Aptitude", "questions": 10, "marks": 15},
-      {"code": "ENGINEERING_MATHEMATICS", "name": "Engineering Mathematics", "questions": 9, "marks": 13},
-      {"code": "SUBJECT", "name": "CS subject topics", "questions": 46, "marks": 72}
-    ]
+      {
+        "code": "GENERAL_APTITUDE",
+        "name": "General Aptitude",
+        "questions": 10,
+        "marks": 15
+      },
+      {
+        "code": "ENGINEERING_MATHEMATICS",
+        "name": "Engineering Mathematics",
+        "questions": null,
+        "marks": 13
+      },
+      {
+        "code": "SUBJECT",
+        "name": "CS subject topics",
+        "questions": null,
+        "marks": 72
+      }
+    ],
+    "note": "Official pattern specifies total questions and marks and the GA/Engineering Mathematics/core-CS mark split; it does not prescribe a fixed question count for each of those three sub-sections."
   },
-  "content_policy": "A pattern configuration is not a question bank. A paper is offered as a full mock only when its imported mock manifest satisfies the configured question and marks totals."
+  "content_policy": "A pattern configuration is not a question bank. A paper is offered as a full mock only when its imported mock manifest satisfies the configured question and marks totals.",
+  "scope_note": "GATEPath is configured only for GATE 2027 paper CS — Computer Science and Information Technology. The common General Aptitude section is included in this CS preparation track."
 }

@@ -90,7 +90,7 @@ async def lifespan(application: FastAPI):
 app = FastAPI(
     title="GATEPath 2027 API",
     version="0.14.0",
-    description="GATEPath learning platform API with individual student accounts.",
+    description="GATEPath 2027 CS-only preparation workspace with guest study sessions.",
     lifespan=lifespan,
 )
 app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
@@ -856,8 +856,29 @@ def session_record(raw_token: str | None):
 def require_user(gatepath_session: str | None = Cookie(default=None, alias=SESSION_COOKIE)):
     row = session_record(gatepath_session)
     if not row:
-        raise HTTPException(status_code=401, detail="Please sign in to continue")
+        raise HTTPException(status_code=401, detail="Your guest workspace expired. Reload the site to start a new workspace.")
     return row
+
+
+
+def ensure_guest_workspace(request: Request, raw_token: str | None) -> str:
+    """Create or reuse a browser-scoped CS workspace without a sign-in screen."""
+    if session_record(raw_token):
+        return raw_token or ""
+    guest_id = secrets.token_hex(18)
+    guest_email = f"guest-{guest_id}@guest.gatepath.invalid"
+    guest_password = secrets.token_urlsafe(48)
+    with get_connection() as conn:
+        cursor = conn.execute(
+            "INSERT INTO users (full_name, email, password_hash, role) VALUES (?, ?, ?, 'student')",
+            ("GATE Learner", guest_email, password_hash(guest_password)),
+        )
+        user_id = int(cursor.lastrowid)
+        conn.execute(
+            "INSERT INTO user_profiles (user_id, paper_code, target, daily_hours) VALUES (?, 'CS', 'Top GATE score', 5)",
+            (user_id,),
+        )
+    return create_session(user_id, request)
 
 
 def require_admin(user=Depends(require_user)):
@@ -929,7 +950,7 @@ async def security_and_origin_middleware(request: Request, call_next):
     is_production = os.getenv("APP_ENV", "development").lower() == "production"
     if is_production and secure_cookies_enabled():
         response.headers.setdefault("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
-    if request.url.path.startswith("/api/") or request.url.path in {"/app", "/workspace"}:
+    if request.url.path.startswith("/api/") or request.url.path in {"/", "/app", "/workspace"}:
         response.headers.setdefault("Cache-Control", "no-store")
     return response
 
@@ -937,29 +958,36 @@ async def security_and_origin_middleware(request: Request, call_next):
 # --------------------------------- Pages -----------------------------------
 
 @app.get("/", include_in_schema=False)
-def home():
-    return FileResponse(FRONTEND_DIR / "landing.html")
+def home(
+    request: Request,
+    gatepath_session: str | None = Cookie(default=None, alias=SESSION_COOKIE),
+):
+    page = FileResponse(FRONTEND_DIR / "index.html")
+    guest_token = ensure_guest_workspace(request, gatepath_session)
+    if guest_token != (gatepath_session or ""):
+        set_session_cookie(page, request, guest_token)
+    return page
 
 
 @app.get("/login", include_in_schema=False)
 @app.get("/register", include_in_schema=False)
 @app.get("/forgot-password", include_in_schema=False)
 @app.get("/reset-password", include_in_schema=False)
-def auth_page(request: Request, gatepath_session: str | None = Cookie(default=None, alias=SESSION_COOKIE)):
-    if session_record(gatepath_session):
-        return RedirectResponse(url="/app", status_code=303)
-    return FileResponse(FRONTEND_DIR / "auth.html")
+def auth_page():
+    return RedirectResponse(url="/app", status_code=303)
 
 
 @app.get("/app", include_in_schema=False)
 @app.get("/workspace", include_in_schema=False)
-def student_workspace(request: Request, gatepath_session: str | None = Cookie(default=None, alias=SESSION_COOKIE)):
-    if not session_record(gatepath_session):
-        destination = request.url.path
-        if request.url.query:
-            destination += f"?{request.url.query}"
-        return RedirectResponse(url=f"/login?next={destination}", status_code=303)
-    return FileResponse(FRONTEND_DIR / "index.html")
+def student_workspace(
+    request: Request,
+    gatepath_session: str | None = Cookie(default=None, alias=SESSION_COOKIE),
+):
+    page = FileResponse(FRONTEND_DIR / "index.html")
+    guest_token = ensure_guest_workspace(request, gatepath_session)
+    if guest_token != (gatepath_session or ""):
+        set_session_cookie(page, request, guest_token)
+    return page
 
 
 # -------------------------------- Public API -------------------------------
@@ -2035,11 +2063,23 @@ def logout(
     return {"message": "You have been signed out"}
 
 
+@app.get("/api/workspace")
+def workspace_state(user=Depends(require_user)):
+    return {
+        "user": {"id": user["id"], "full_name": "GATE Learner", "role": "student", "workspace_mode": "guest"},
+        "profile": {"paper_code": "CS", "target": user["target"], "daily_hours": user["daily_hours"], "updated_at": user["profile_updated_at"]},
+        "workspace_mode": "guest",
+        "paper_code": "CS",
+        "data_notice": "This is a guest workspace. On the Vercel preview, study data uses temporary SQLite storage and may reset."
+    }
+
+
 @app.get("/api/auth/me")
 def who_am_i(user=Depends(require_user)):
+    is_guest = str(user["email"]).endswith("@guest.gatepath.invalid")
     return {
-        "user": {"id": user["id"], "full_name": user["full_name"], "email": user["email"], "role": user["role"], "created_at": user["created_at"]},
-        "profile": {"paper_code": user["paper_code"], "target": user["target"], "daily_hours": user["daily_hours"], "updated_at": user["profile_updated_at"]},
+        "user": {"id": user["id"], "full_name": "GATE Learner" if is_guest else user["full_name"], "email": "" if is_guest else user["email"], "role": user["role"], "created_at": user["created_at"]},
+        "profile": {"paper_code": "CS", "target": user["target"], "daily_hours": user["daily_hours"], "updated_at": user["profile_updated_at"]},
     }
 
 
@@ -2094,8 +2134,8 @@ def get_profile(user=Depends(require_user)):
 @app.put("/api/profile")
 def update_profile(payload: ProfileUpdate, user=Depends(require_user)):
     code = payload.paper_code.upper()
-    if code not in paper_codes():
-        raise HTTPException(status_code=400, detail="Unknown GATE paper code")
+    if code != "CS" or code not in paper_codes():
+        raise HTTPException(status_code=400, detail="GATEPath currently supports only paper CS — Computer Science and Information Technology.")
     with get_connection() as conn:
         conn.execute(
             """UPDATE user_profiles SET paper_code = ?, target = ?, daily_hours = ?, updated_at = CURRENT_TIMESTAMP
@@ -2284,6 +2324,8 @@ def build_study_plan(conn, user: dict, payload: PlannerPlanCreatePayload) -> dic
     if code not in paper_codes():
         raise HTTPException(status_code=404, detail="GATE paper not found")
     topics = planner_topics_for_paper(code)
+    if not payload.include_general_aptitude:
+        topics = [topic for topic in topics if topic["section_code"] != "GA"]
     if not topics:
         raise HTTPException(status_code=409, detail="A topic-level syllabus import is not available for this paper yet. The planner will be available after its official syllabus has been structured.")
     start = payload.start_date or date.today()
@@ -2401,19 +2443,6 @@ def build_study_plan(conn, user: dict, payload: PlannerPlanCreatePayload) -> dic
                 )
                 task_count += 1
 
-    if payload.include_general_aptitude:
-        # The official shared GA PDF is linked, but topic-level GA transcription
-        # has not yet been imported; the planner labels this as source-led review.
-        ga_day_indexes = [index for index in range(active_days, payload.plan_days, 3) if index not in mock_day_indexes]
-        for day_index in ga_day_indexes:
-            scheduled = start + timedelta(days=day_index)
-            insert_planner_task(
-                conn, plan_id=plan_id, user_id=user["id"], paper_code=code, scheduled_date=scheduled,
-                task_type="practice", title="General Aptitude: source-led practice",
-                description="Review the official shared General Aptitude syllabus and solve a short set from a trusted resource. GATEPath topic-level GA content is pending import.",
-                duration_minutes=20, priority="normal", metadata={"shared_section": "GA", "official_syllabus_url": "https://gate2027.iitm.ac.in/exam_papers_and_syllabus", "topic_content_pending": True},
-            )
-            task_count += 1
 
     if payload.include_weekly_mock:
         mock_catalog = load_mock_manifest(code, f"{code}-FULL-MOCK-01")

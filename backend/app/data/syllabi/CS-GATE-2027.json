@@ -6,16 +6,17 @@
   "source_url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/CS_GATE2027_Syllabus.pdf",
   "catalogue_url": "https://gate2027.iitm.ac.in/exam_papers_and_syllabus",
   "source_published_by": "IIT Madras / GATE 2027 Organizing Institute",
-  "source_verified_on": "2026-11-05",
+  "source_verified_on": "2026-11-07",
   "content_status": "imported_verified",
-  "transcription_note": "Section titles and topic scope were transcribed from the official two-page CS syllabus PDF. Topic and subtopic boundaries are a navigational breakdown of the official statements; subtopic labels do not add syllabus scope.",
+  "transcription_note": "The GATE 2027 CS syllabus has ten subject sections. The common General Aptitude PDF is transcribed as a separate 15-mark study section in this CS-only workspace. Topic labels are navigational breakdowns; the linked IIT Madras PDFs remain authoritative.",
   "common_section": {
     "code": "GA",
     "name": "General Aptitude",
     "marks": 15,
-    "content_status": "source_linked_pending_import",
+    "content_status": "official_pdf_transcribed",
     "official_url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
-    "description": "Common to all GATE papers. The detailed GA syllabus is maintained in the official shared General Aptitude PDF and has not yet been transcribed into topic-level cards."
+    "description": "General Aptitude is the common 15-mark section in the GATE CS paper. The four official syllabus areas are Verbal, Quantitative, Analytical and Spatial Aptitude.",
+    "scope_note": "GATEPath topic cards are an editorial navigation breakdown of the official PDF; they do not replace the official syllabus."
   },
   "paper_specific_marks": 85,
   "sections": [
@@ -746,6 +747,74 @@
           ],
           "prerequisites": [],
           "study_note": "",
+          "source_status": "official_pdf_transcribed"
+        }
+      ]
+    },
+    {
+      "code": "GA",
+      "name": "General Aptitude",
+      "order": 0,
+      "section_type": "common",
+      "marks": 15,
+      "topics": [
+        {
+          "id": "GA-VERBAL-01",
+          "name": "Verbal Aptitude",
+          "official_statement": "Basic English grammar (tenses, articles, adjectives, prepositions, conjunctions, verb-noun agreement and other parts of speech); basic vocabulary, words, idioms and phrases in context; reading and comprehension; narrative sequencing.",
+          "subtopics": [
+            "Grammar: tenses, articles and parts of speech",
+            "Prepositions, conjunctions and subject–verb agreement",
+            "Vocabulary, idioms and phrases in context",
+            "Reading comprehension and inference",
+            "Narrative sequencing and sentence order"
+          ],
+          "prerequisites": [],
+          "study_note": "GA-VERBAL-01",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "GA-QUANT-01",
+          "name": "Quantitative Aptitude",
+          "official_statement": "Data interpretation using bar graphs, pie charts, other graphs, 2D/3D plots, maps and tables; ratios, percentages, powers, exponents and logarithms; permutations and combinations; series; mensuration and geometry; elementary statistics and probability.",
+          "subtopics": [
+            "Data interpretation: charts, plots, maps and tables",
+            "Ratios, proportions and percentages",
+            "Powers, exponents and logarithms",
+            "Permutations, combinations and number series",
+            "Mensuration and geometry",
+            "Elementary statistics and probability"
+          ],
+          "prerequisites": [],
+          "study_note": "GA-QUANT-01",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "GA-ANALYTICAL-01",
+          "name": "Analytical Aptitude",
+          "official_statement": "Logical deduction and induction; analogies; numerical relations and reasoning.",
+          "subtopics": [
+            "Logical deduction and constraint-based reasoning",
+            "Inductive reasoning and pattern generalisation",
+            "Analogies and classification",
+            "Numerical relations and reasoning"
+          ],
+          "prerequisites": [],
+          "study_note": "GA-ANALYTICAL-01",
+          "source_status": "official_pdf_transcribed"
+        },
+        {
+          "id": "GA-SPATIAL-01",
+          "name": "Spatial Aptitude",
+          "official_statement": "Transformations such as translation, rotation, scaling, mirroring, assembling and grouping; paper folding and cutting; patterns in two and three dimensions.",
+          "subtopics": [
+            "Translation, rotation, scaling and mirroring",
+            "Assembling, grouping and object transformations",
+            "Paper folding and cutting",
+            "Patterns in 2D and 3D shapes"
+          ],
+          "prerequisites": [],
+          "study_note": "GA-SPATIAL-01",
           "source_status": "official_pdf_transcribed"
         }
       ]

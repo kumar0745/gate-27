@@ -54,13 +54,13 @@ def test_practice_endpoints_require_authentication(client):
 def test_catalog_maps_original_practice_pilot_to_official_cs_syllabus(client):
     register(client)
     payload = client.get("/api/practice/catalog?paper_code=CS").json()
-    assert payload["content_status"] == "original_practice_pilot"
-    assert payload["total_questions"] == 30
-    assert len(payload["sections"]) == 10
-    assert sum(section["question_count"] for section in payload["sections"]) == 30
+    assert payload["content_status"] == "original_practice_pilot_cs_and_general_aptitude"
+    assert payload["total_questions"] == 38
+    assert len(payload["sections"]) == 11
+    assert sum(section["question_count"] for section in payload["sections"]) == 38
     assert payload["editorial_status"].startswith("AI-drafted pilot")
-    assert payload["difficulty_counts"] == {"Beginner": 18, "Intermediate": 7, "Advanced": 5}
-    assert payload["question_type_counts"] == {"MCQ": 11, "NAT": 13, "MSQ": 6}
+    assert payload["difficulty_counts"] == {"Beginner": 22, "Intermediate": 11, "Advanced": 5}
+    assert payload["question_type_counts"] == {"MCQ": 17, "NAT": 15, "MSQ": 6}
 
 
 def test_practice_list_filters_questions_without_leaking_answers(client):
@@ -76,14 +76,11 @@ def test_practice_list_filters_questions_without_leaking_answers(client):
     assert "solution" not in item
 
 
-def test_unknown_practice_papers_show_pending_content(client):
-    register(client, paper_code="DA")
-    catalog = client.get("/api/practice/catalog?paper_code=DA").json()
-    questions = client.get("/api/practice/questions?paper_code=DA").json()
-    assert catalog["content_status"] == "awaiting_practice_import"
-    assert questions["content_status"] == "awaiting_practice_import"
-    assert questions["items"] == []
-    assert client.post("/api/practice/sessions", json={"paper_code": "DA"}).status_code == 409
+def test_non_cs_papers_are_rejected_by_practice_endpoints(client):
+    register(client)
+    assert client.get("/api/practice/catalog?paper_code=DA").status_code == 404
+    assert client.get("/api/practice/questions?paper_code=DA").status_code == 404
+    assert client.post("/api/practice/sessions", json={"paper_code": "DA"}).status_code == 404
 
 
 def test_topic_session_only_contains_matching_topic_and_hides_answers(client):
@@ -231,8 +228,8 @@ def test_practice_data_has_unique_ids_and_syllabus_topic_mapping():
     syllabus = json.loads((ROOT / "backend/app/data/syllabi/CS-GATE-2027.json").read_text(encoding="utf-8"))
     topic_ids = {topic["id"] for section in syllabus["sections"] for topic in section["topics"]}
     questions = data["questions"]
-    assert len(questions) == 30
-    assert len({question["id"] for question in questions}) == 30
+    assert len(questions) == 38
+    assert len({question["id"] for question in questions}) == 38
     assert all(question["topic_id"] in topic_ids for question in questions)
     assert all(question["id"].startswith("GP-CS-") for question in questions)
     assert "not official GATE questions" in data["content_origin"]

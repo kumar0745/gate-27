@@ -58,7 +58,7 @@ def test_tutor_status_discloses_ai_configuration_and_indexed_topics(client):
     assert data["paper_code"] == "CS"
     assert data["ai_available"] is False
     assert data["mode"] == "knowledge_only"
-    assert data["indexed_topic_count"] == 52
+    assert data["indexed_topic_count"] == 56
     assert data["privacy_note"]
 
 
@@ -91,15 +91,10 @@ def test_topic_scoped_chat_validates_topic_id(client):
     assert good.json()["sources"][0]["topic_id"] == "CS-01-02"
 
 
-def test_unsupported_paper_uses_official_source_only_mode(client):
-    register(client, paper_code="DA")
-    data = client.get("/api/tutor/status").json()
-    assert data["mode"] == "official_source_only"
-    assert data["indexed_topic_count"] == 0
-    chat = client.post("/api/tutor/chat", json={"message": "Explain a data science topic"})
-    assert chat.status_code == 200
-    assert chat.json()["mode"] == "official_source_only"
-    assert chat.json()["sources"][0]["content_status"] == "official_source"
+def test_tutor_supports_only_the_cs_preparation_track(client):
+    register(client)
+    assert client.get("/api/tutor/status").json()["paper_code"] == "CS"
+    assert client.post("/api/tutor/chat", json={"message": "Explain a topic", "paper_code":"DA"}).status_code == 400
 
 
 def test_image_is_not_stored_and_is_not_claimed_analyzed_without_ai(client):
@@ -164,7 +159,7 @@ def test_similar_questions_rejects_unknown_topic(client):
 def test_chat_rejects_a_different_paper_than_the_student_profile(client):
     register(client, paper_code="CS")
     response = client.post("/api/tutor/chat", json={"message": "Explain databases", "paper_code": "DA"})
-    assert response.status_code == 409
+    assert response.status_code == 400
 
 
 def test_rag_retrieval_prioritises_explicit_topic_and_returns_source_metadata():

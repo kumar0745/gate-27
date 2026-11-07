@@ -1,101 +1,68 @@
-# Stage 14 — Deployment and Release Guide
+# GATEPath CS-only deployment guide
 
-## Release status
+## Current release
 
-The repository is packaged for deployment. A public production URL is **not** claimed by this build because it has not been connected to a hosting account, domain, or user-controlled secrets.
+GATEPath contains one preparation track: **GATE 2027 CS — Computer Science and Information Technology**, with General Aptitude included. The root route opens the guest workspace directly. `/login`, `/register`, `/forgot-password` and `/reset-password` redirect to `/app`; no account creation or sign-in screen is part of this release.
 
-## Runtime architecture
+## Runtime
 
-- FastAPI serves the public website and authenticated workspace pages.
-- Static frontend assets are served from `/static`.
-- SQLite stores accounts, sessions, learning progress, attempts, plans, conversations, community posts and admin review records.
-- The database path is configurable with `GATEPATH_DATABASE_PATH`.
-- `/api/health` checks process health; `/api/ready` checks database readiness.
+- FastAPI serves the workspace, public health endpoints and CS preparation APIs.
+- Static workspace assets are served from `/static/`.
+- A random browser session cookie scopes a guest's progress, plans, practice and activity to that browser workspace.
+- SQLite is used for local development and for the included Render persistent-disk setup.
+- `/api/health` checks process liveness. `/api/ready` checks database readiness.
 
-## Local run (Windows PowerShell)
+## Local run
 
-```powershell
-Copy-Item .env.example .env
-# Edit .env and set GATEPATH_ADMIN_EMAIL and GATEPATH_ADMIN_PASSWORD.
-py -3 -m venv .venv
-.\.venv\Scripts\Activate.ps1
+```bash
+python -m venv .venv
+# Activate .venv using the command for your shell.
 python -m pip install -r requirements-dev.txt
 python scripts/check_project.py
 python -m pytest backend/tests -q
-python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000
+python -m uvicorn index:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Open `http://127.0.0.1:8000`. The workspace is at `/app` and API docs at `/docs` in development.
+Open `http://127.0.0.1:8000`. The guest study workspace is created automatically.
 
-## Local run (Linux/macOS)
+## Render with persistent disk
+
+The root `render.yaml` and `Dockerfile` configure a Docker web service, `/api/ready` health checking and a disk mounted at `/var/data`.
+
+1. Connect this repository to Render and create the Blueprint service.
+2. Configure the final public URL and secure-cookie environment settings.
+3. Ensure the service plan supports persistent disks and that the disk is mounted at `/var/data`.
+4. Confirm `/api/health` and `/api/ready` both return HTTP 200.
+5. Verify guest workspace creation, progress writes, restarts and persistence.
+
+A persistent disk is required for SQLite-backed records. Multi-instance scale requires a managed shared database and a database adapter/schema migration.
+
+## Vercel
+
+The verified Vercel preview deployment is a smoke-test environment only. It uses `APP_ENV=preview` and `GATEPATH_DATABASE_PATH=/tmp/gatepath.db` so the FastAPI app can be tested on Vercel. `/tmp` storage is ephemeral and instance-local: user progress may disappear and must not be presented as durable storage.
+
+The database adapter deliberately fails fast on Vercel production while the project only has SQLite. Before promoting a production deployment, migrate the adapter/schema to a durable managed database (for example PostgreSQL), configure the production connection securely in Vercel, and test migrations, guest progress writes, restarts and backup/restore.
+
+## Release checks
 
 ```bash
-cp .env.example .env
-# Edit .env and set GATEPATH_ADMIN_EMAIL and GATEPATH_ADMIN_PASSWORD.
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements-dev.txt
 python scripts/check_project.py
+python -m compileall -q backend
+node --check frontend/app.js
 python -m pytest backend/tests -q
-python -m uvicorn app.main:app --app-dir backend --host 127.0.0.1 --port 8000
 ```
 
-## Docker
+Then smoke-test:
 
-```bash
-docker build -t gatepath-2027 .
-docker run --rm -p 8000:8000 \
-  -e APP_ENV=development \
-  -e APP_BASE_URL=http://localhost:8000 \
-  -e GATEPATH_SECURE_COOKIES=false \
-  -e GATEPATH_DATABASE_PATH=/var/data/gatepath.db \
-  -e GATEPATH_ADMIN_EMAIL=admin@example.com \
-  -e GATEPATH_ADMIN_PASSWORD='ReplaceWithALongUniquePassword123' \
-  -v gatepath-data:/var/data \
-  gatepath-2027
-```
+- `/` loads the CS workspace without sign-in.
+- `/app` loads and sets a guest workspace cookie.
+- `/api/papers` returns only `CS`.
+- `/api/syllabus?paper_code=CS` returns the ten CS sections plus General Aptitude.
+- requests for other paper codes are rejected.
+- CS notes, topic maps, practice, mock, PYQ archive links, planner and analytics load.
+- `/api/health` and `/api/ready` return HTTP 200.
+- in a persistent production environment, progress survives process restarts.
 
-For a real HTTPS deployment, set `APP_BASE_URL` to the final `https://` origin and set `GATEPATH_SECURE_COOKIES=true`. Do not put credentials in the Docker image or commit them to source control.
+## Data provenance
 
-## Render Blueprint
-
-The root `render.yaml` and `Dockerfile` configure a single Docker web service with `/api/ready` as its health check and a persistent volume at `/var/data`.
-
-1. Push this project to a Git repository you control.
-2. In Render, create a new Blueprint and connect that repository.
-3. Enter `APP_BASE_URL` as the final service URL (for example, `https://your-service.onrender.com`).
-4. Enter a valid administrator email. Render generates the initial admin password if you keep `generateValue: true`; save it securely from the service environment settings.
-5. Optionally configure `OPENAI_API_KEY` and SMTP values. The offline knowledge-only tutor works without an AI key; password-reset email delivery requires SMTP.
-6. Deploy and wait for `/api/ready` to return HTTP 200.
-7. Sign in as the bootstrap admin, change/store credentials safely, create a student account and complete the smoke checklist below.
-
-**Hosting requirement:** Render persistent disks require a paid web service. The blueprint uses a persistent disk because the current database is SQLite; without persistence, account and learning data can be lost on redeploy. A persistent disk also limits the service to one instance. For a multi-instance/high-scale deployment, migrate the app from SQLite to managed PostgreSQL and review connection pooling before scaling. See Render's official [Blueprint reference](https://render.com/docs/blueprint-spec) and [Persistent Disks documentation](https://render.com/docs/disks).
-
-## Production environment checklist
-
-- `APP_ENV=production`
-- `APP_BASE_URL=https://<your-domain>`
-- `GATEPATH_SECURE_COOKIES=true`
-- `GATEPATH_DATABASE_PATH=/var/data/gatepath.db` (when using the included Render disk)
-- Strong bootstrap admin credentials, stored only in the hosting provider's secret manager
-- SMTP settings tested with a real inbox before advertising password reset
-- AI provider key configured only if live model answers are enabled
-- Backups of `/var/data/gatepath.db` scheduled and restore tested
-- Domain HTTPS enabled and final redirect/origin behavior tested
-
-## Post-deployment smoke checklist
-
-1. `GET /api/health` returns HTTP 200.
-2. `GET /api/ready` returns HTTP 200 with `database: ok`.
-3. Landing page `/` loads and assets under `/static/` return HTTP 200.
-4. Registration, login, logout and protected `/app` redirect work.
-5. Admin login can open the admin workspace; a student receives HTTP 403 from admin APIs.
-6. A syllabus topic can be opened and marked complete.
-7. A practice question can be attempted and appears in analytics.
-8. A mock can be started, saved, submitted and reviewed.
-9. Community post/report moderation works.
-10. Restart/redeploy preserves the database and user accounts.
-
-## Content coverage disclosure
-
-The application architecture supports the official GATE paper catalogue. The structured topic syllabus, study notes, mind maps, practice set and full mock are currently populated primarily for the CS pilot. Official paper links and explicit pending-import states are shown for other papers; do not advertise every paper as having a complete interactive question/notes library until it has been transcribed, reviewed and tested. The CS 2026 PYQ import stores answer-key metadata and official paper links; it does not redistribute the full question-paper text.
+Official syllabus statements, General Aptitude scope, question-paper pattern, 2021–2026 CS paper links and 2026 CS-1/CS-2 answer-key metadata are sourced from the IIT Madras GATE 2027 website/archive. GATEPath-authored notes, examples, practice questions and mock questions are supplemental editorial content and are labelled as such. The official question stems and diagrams are not republished; the PYQ workspace links to the official question-paper PDFs and stores answer-key metadata separately.

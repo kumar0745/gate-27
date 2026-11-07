@@ -2,12 +2,12 @@
   "paper_code": "CS",
   "paper_name": "Computer Science and Information Technology",
   "syllabus_version": "GATE 2027",
-  "content_version": "1.0.0",
-  "content_status": "pilot_library_editorial_notes",
+  "content_version": "1.1.0",
+  "content_status": "original_study_notes_mapped_to_official_cs_and_ga_syllabus",
   "created_by": "GATEPath editorial content",
   "created_on": "2026-11-06",
   "official_syllabus_url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/CS_GATE2027_Syllabus.pdf",
-  "notice": "These original GATEPath learning notes are supplemental explanations. They are not official GATE content, coaching-provider material, or a substitute for the official syllabus. External course availability and certification terms can change.",
+  "notice": "This is a CS-only GATE 2027 workspace. Topic notes and practice questions labelled GATEPath are original supplemental content, not official GATE questions. Use the linked IIT Madras syllabus and question-paper PDFs as the source of truth.",
   "materials": [
     {
       "id": "CS-01-01",
@@ -4397,6 +4397,314 @@
           "type": "book_reference",
           "url": "",
           "access_note": "Suggested reference: Kurose and Ross, Computer Networking: A Top-Down Approach; Tanenbaum and Wetherall, Computer Networks. Use legitimate library or publisher copies; GATEPath does not distribute copyrighted book files."
+        }
+      ]
+    },
+    {
+      "id": "GA-VERBAL-01",
+      "paper_code": "CS",
+      "syllabus_version": "GATE 2027",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_name": "Verbal Aptitude",
+      "official_statement": "Basic English grammar (tenses, articles, adjectives, prepositions, conjunctions, verb-noun agreement and other parts of speech); basic vocabulary, words, idioms and phrases in context; reading and comprehension; narrative sequencing.",
+      "content_status": "editorial_learning_note",
+      "content_label": "GATEPath original study note · scope mapped to official GATE 2027 GA syllabus",
+      "reading_minutes": 35,
+      "difficulty": "Foundation",
+      "overview": "Verbal Aptitude tests accurate reading and clear use of English. Prepare grammar and vocabulary in context, then practise comprehension, inference and sentence ordering. The objective is not memorising rare words; it is reading precisely and identifying the relationship between ideas.",
+      "learning_outcomes": [
+        "Apply core grammar rules to short sentences.",
+        "Infer the meaning of a word or phrase from its context.",
+        "Distinguish a directly stated fact from an inference.",
+        "Order sentences using references, transitions and logical flow."
+      ],
+      "concepts": [
+        {
+          "heading": "Grammar checkpoints",
+          "explanation": "Check subject–verb agreement, tense consistency, articles, prepositions, conjunctions, pronoun reference and adjective/adverb usage. In a sentence correction task, identify the grammatical subject before checking the verb; do not let an intervening phrase distract you."
+        },
+        {
+          "heading": "Vocabulary in context",
+          "explanation": "Use the sentence around a word as evidence. Look for contrast markers (although, however), cause markers (because, therefore), examples and the overall tone. Distinguish close options by connotation and grammatical role, not by vague familiarity."
+        },
+        {
+          "heading": "Reading comprehension",
+          "explanation": "Read the question stem carefully, locate the relevant paragraph and support every answer with a line or a necessary inference. Main-idea questions require the central claim; detail questions require specific evidence; inference questions must not introduce assumptions absent from the passage."
+        },
+        {
+          "heading": "Narrative sequencing",
+          "explanation": "Find the opening sentence, identify pronouns and demonstratives that refer backward, track chronology and causal links, and use transition words to connect the paragraph. A sentence beginning with “this”, “such” or “therefore” usually needs an earlier referent."
+        }
+      ],
+      "worked_example": {
+        "title": "Sentence order using reference clues",
+        "prompt": "Arrange: (P) This method reduces repeated work. (Q) A search tree stores keys in an ordered structure. (R) Therefore, lookup can discard part of the remaining search space. (S) Its ordering property is the key to the reduction.",
+        "steps": [
+          "Q introduces the subject: a search tree.",
+          "S refers to the ordering property of the structure just introduced.",
+          "P explains the consequence of the method.",
+          "R begins with “therefore” and concludes the causal chain."
+        ],
+        "answer": "Q → S → P → R"
+      },
+      "formula_cards": [],
+      "common_mistakes": [
+        "Choosing an option because it sounds sophisticated rather than because the passage supports it.",
+        "Treating an inference as permission to add outside facts.",
+        "Ignoring pronoun references and transition words in sentence ordering.",
+        "Checking a verb against the nearest noun instead of the grammatical subject."
+      ],
+      "quick_revision": [
+        "Subject first, then verb agreement.",
+        "Use surrounding clauses to infer vocabulary.",
+        "Every comprehension answer needs textual evidence.",
+        "For ordering, track references, chronology and connectors."
+      ],
+      "resources": [
+        {
+          "title": "Official GATE 2027 General Aptitude syllabus",
+          "provider": "IIT Madras / GATE 2027",
+          "type": "official_syllabus",
+          "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+          "access_note": "Official syllabus source; GATEPath notes are supplemental."
+        }
+      ]
+    },
+    {
+      "id": "GA-QUANT-01",
+      "paper_code": "CS",
+      "syllabus_version": "GATE 2027",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_name": "Quantitative Aptitude",
+      "official_statement": "Data interpretation using bar graphs, pie charts, other graphs, 2D/3D plots, maps and tables; ratios, percentages, powers, exponents and logarithms; permutations and combinations; series; mensuration and geometry; elementary statistics and probability.",
+      "content_status": "editorial_learning_note",
+      "content_label": "GATEPath original study note · scope mapped to official GATE 2027 GA syllabus",
+      "reading_minutes": 45,
+      "difficulty": "Foundation",
+      "overview": "Quantitative Aptitude combines arithmetic fluency with interpretation of data and elementary mathematical reasoning. Work with units, estimates and exact definitions. In chart questions, read the axes, legend, scale and time period before calculating.",
+      "learning_outcomes": [
+        "Interpret values from tables, maps, bar and pie charts and 2D/3D plots.",
+        "Solve ratio, percentage and proportional reasoning problems.",
+        "Use indices, exponents and logarithms correctly.",
+        "Count arrangements and selections using permutations and combinations.",
+        "Solve elementary series, geometry, mensuration, statistics and probability questions."
+      ],
+      "concepts": [
+        {
+          "heading": "Data interpretation workflow",
+          "explanation": "Read the title, axes, units, legend and scale. Record the requested population and time period. For a pie chart, value = sector fraction × total; for a rate or percentage, identify the correct denominator. Estimate first to catch arithmetic errors."
+        },
+        {
+          "heading": "Ratios and percentages",
+          "explanation": "A:B = a:b means the quantities are ka and kb. Percentage change = (new − old) / old × 100. If a value rises by x% and later falls by x%, the original value is generally not restored. Convert percentages to fractions before long calculations when convenient."
+        },
+        {
+          "heading": "Powers, exponents and logarithms",
+          "explanation": "Use a^m a^n = a^(m+n), (a^m)^n = a^(mn), and log_b(xy)=log_b x + log_b y for valid positive arguments and base b>0, b≠1. Check the domain before applying a logarithm or cancelling exponents."
+        },
+        {
+          "heading": "Counting and series",
+          "explanation": "Use multiplication for sequential independent choices. Use nPr when order matters and nCr when only the selected set matters. For series, test first differences, second differences, ratios and alternating subsequences before assuming a familiar pattern."
+        },
+        {
+          "heading": "Geometry, mensuration and elementary statistics",
+          "explanation": "Write the relevant area, perimeter or volume relation before substituting. Keep units consistent. Mean is sum/count; median is the middle after sorting; mode is most frequent; standard deviation measures spread around the mean."
+        },
+        {
+          "heading": "Probability",
+          "explanation": "For equally likely outcomes, P(A)=favourable outcomes/total outcomes. For conditional probability, P(A|B)=P(A∩B)/P(B) when P(B)>0. Use Bayes’ theorem only after identifying the prior, likelihood and evidence probability."
+        }
+      ],
+      "worked_example": {
+        "title": "Percentage change",
+        "prompt": "A dataset contains 240 records. The count increases by 15%. What is the new count?",
+        "steps": [
+          "Increase = 15% of 240 = 0.15 × 240 = 36.",
+          "New count = 240 + 36 = 276.",
+          "Check: 276/240 = 1.15."
+        ],
+        "answer": "276 records"
+      },
+      "formula_cards": [
+        {
+          "name": "Percentage change",
+          "formula": "((new − old) / old) × 100%"
+        },
+        {
+          "name": "Combinations",
+          "formula": "nCr = n! / (r!(n−r)!)"
+        },
+        {
+          "name": "Conditional probability",
+          "formula": "P(A|B) = P(A∩B) / P(B), P(B)>0"
+        },
+        {
+          "name": "Arithmetic mean",
+          "formula": "Mean = (sum of observations) / (number of observations)"
+        }
+      ],
+      "common_mistakes": [
+        "Using the new value as the denominator for percentage change.",
+        "Ignoring units and chart scales.",
+        "Using permutations when order is irrelevant.",
+        "Applying logarithm laws to non-positive arguments.",
+        "Assuming events are independent without justification."
+      ],
+      "quick_revision": [
+        "Read chart axes, units and legend first.",
+        "Percentage-change denominator is the original value.",
+        "Decide whether order matters before choosing nPr or nCr.",
+        "Check domains and units before finalising."
+      ],
+      "resources": [
+        {
+          "title": "Official GATE 2027 General Aptitude syllabus",
+          "provider": "IIT Madras / GATE 2027",
+          "type": "official_syllabus",
+          "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+          "access_note": "Official syllabus source; GATEPath notes are supplemental."
+        }
+      ]
+    },
+    {
+      "id": "GA-ANALYTICAL-01",
+      "paper_code": "CS",
+      "syllabus_version": "GATE 2027",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_name": "Analytical Aptitude",
+      "official_statement": "Logical deduction and induction; analogies; numerical relations and reasoning.",
+      "content_status": "editorial_learning_note",
+      "content_label": "GATEPath original study note · scope mapped to official GATE 2027 GA syllabus",
+      "reading_minutes": 30,
+      "difficulty": "Foundation",
+      "overview": "Analytical Aptitude rewards structured reasoning. Translate statements into constraints, separate facts from assumptions and test candidate conclusions. For numerical relations and analogies, identify the rule that consistently maps each example.",
+      "learning_outcomes": [
+        "Use deduction to identify conclusions that must follow from stated premises.",
+        "Use induction to recognise a pattern while distinguishing a conjecture from proof.",
+        "Solve analogies by identifying the relationship, not just surface similarity.",
+        "Translate numerical relations into equations or constraints."
+      ],
+      "concepts": [
+        {
+          "heading": "Deductive reasoning",
+          "explanation": "A conclusion is valid only if it follows from the premises. For “all A are B” and “some B are C”, do not infer that some A are C. Use set diagrams, truth tables or short symbolic statements to test the exact implication."
+        },
+        {
+          "heading": "Inductive reasoning",
+          "explanation": "Induction generalises from observed examples. Test more than one case and look for counterexamples. A pattern observed in a few terms may suggest a rule but is not a proof unless the question asks only for the next term under the intended pattern."
+        },
+        {
+          "heading": "Analogies",
+          "explanation": "Name the relationship in the first pair (part-to-whole, tool-to-purpose, cause-to-effect, sequence, category or inverse) before evaluating options. Apply the same relationship in the same direction to the second pair."
+        },
+        {
+          "heading": "Numerical relations",
+          "explanation": "Translate words into variables and constraints. Track signs, parity, divisibility, relative order and arithmetic operations. Check each option against every condition, not just the first."
+        }
+      ],
+      "worked_example": {
+        "title": "Set-based deduction",
+        "prompt": "All processors are hardware components. Some hardware components are programmable. Which statement must be true: (A) all processors are programmable, (B) some processors are programmable, (C) all processors are hardware components, (D) no hardware components are processors?",
+        "steps": [
+          "Represent processors as a subset of hardware components.",
+          "The statement about some programmable hardware does not locate those items inside the processor subset.",
+          "Therefore neither A nor B is forced, while C repeats the first premise."
+        ],
+        "answer": "C"
+      },
+      "formula_cards": [],
+      "common_mistakes": [
+        "Confusing “all” with “some”.",
+        "Assuming two sets overlap because each is related to a third set.",
+        "Treating an observed sequence as a unique mathematical rule.",
+        "Using only surface resemblance to solve an analogy."
+      ],
+      "quick_revision": [
+        "A deduction must follow in every model satisfying the premises.",
+        "Induction suggests patterns; it does not prove them automatically.",
+        "State the analogy relationship before choosing an option.",
+        "Check every constraint in numerical reasoning."
+      ],
+      "resources": [
+        {
+          "title": "Official GATE 2027 General Aptitude syllabus",
+          "provider": "IIT Madras / GATE 2027",
+          "type": "official_syllabus",
+          "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+          "access_note": "Official syllabus source; GATEPath notes are supplemental."
+        }
+      ]
+    },
+    {
+      "id": "GA-SPATIAL-01",
+      "paper_code": "CS",
+      "syllabus_version": "GATE 2027",
+      "section_code": "GA",
+      "section_name": "General Aptitude",
+      "topic_name": "Spatial Aptitude",
+      "official_statement": "Transformations such as translation, rotation, scaling, mirroring, assembling and grouping; paper folding and cutting; patterns in two and three dimensions.",
+      "content_status": "editorial_learning_note",
+      "content_label": "GATEPath original study note · scope mapped to official GATE 2027 GA syllabus",
+      "reading_minutes": 30,
+      "difficulty": "Foundation",
+      "overview": "Spatial Aptitude tests mental manipulation of two- and three-dimensional objects. Track orientation, adjacency, visible faces and the effect of each transformation. Avoid assuming that a rotation changes shape or that a mirror image preserves left and right.",
+      "learning_outcomes": [
+        "Track translation, rotation, scaling and mirroring.",
+        "Reason about assembling and grouping objects.",
+        "Predict outcomes of paper-folding and cutting operations.",
+        "Recognise patterns in 2D and 3D shapes."
+      ],
+      "concepts": [
+        {
+          "heading": "Transformations",
+          "explanation": "Translation changes position but not orientation. Rotation changes orientation around a specified centre. Scaling changes dimensions while preserving shape under uniform scaling. Mirroring reflects across an axis or plane and reverses handedness."
+        },
+        {
+          "heading": "Assembling and grouping",
+          "explanation": "Check edge lengths, orientation, matching faces, symmetry and whether pieces can touch without overlap. For 3D objects, keep track of which faces become adjacent after folding or assembly."
+        },
+        {
+          "heading": "Paper folding and cutting",
+          "explanation": "Mentally unfold the paper in reverse order. A cut made through multiple folded layers is reflected across each fold line. Mark the fold axes and reflect each cut location systematically."
+        },
+        {
+          "heading": "2D and 3D patterns",
+          "explanation": "Look for rotation, reflection, translation, repetition, alternation, face-count changes, shading and adjacency. For cubes, distinguish the visible faces and test whether an option can result from rotation rather than reflection."
+        }
+      ],
+      "worked_example": {
+        "title": "Translation versus rotation",
+        "prompt": "A square is moved three units to the right without being turned or resized. Which geometric transformation describes this operation?",
+        "steps": [
+          "The object changes position only.",
+          "Its orientation, side lengths and angles remain unchanged.",
+          "This is a translation, not rotation or scaling."
+        ],
+        "answer": "Translation"
+      },
+      "formula_cards": [],
+      "common_mistakes": [
+        "Treating a mirror image as an ordinary rotation.",
+        "Forgetting the order of multiple folds.",
+        "Assuming scaling always preserves proportions when scaling may be non-uniform.",
+        "Ignoring which faces are adjacent in a folded 3D object."
+      ],
+      "quick_revision": [
+        "Translation: position; rotation: orientation; scaling: size; reflection: reversed handedness.",
+        "Unfold paper cuts in reverse fold order.",
+        "Track axes, face adjacency and symmetry explicitly.",
+        "Use a small sketch or cube net to validate 3D reasoning."
+      ],
+      "resources": [
+        {
+          "title": "Official GATE 2027 General Aptitude syllabus",
+          "provider": "IIT Madras / GATE 2027",
+          "type": "official_syllabus",
+          "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+          "access_note": "Official syllabus source; GATEPath notes are supplemental."
         }
       ]
     }

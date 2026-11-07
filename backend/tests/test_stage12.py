@@ -50,7 +50,7 @@ def test_analytics_initially_reports_only_zero_recorded_activity(client):
     assert data["practice"]["unique_questions_attempted"] == 0
     assert data["practice"]["accuracy_percent"] == 0
     assert data["mock_tests"]["completed"] == 0
-    assert data["syllabus"]["total_topics"] == 52
+    assert data["syllabus"]["total_topics"] == 56
     assert len(data["activity"]) == 14
     assert "not estimated" in data["notice"]
 
@@ -178,9 +178,9 @@ def test_admin_overview_users_and_content_catalog(client):
     assert data["users"] == 1 and data["admins"] == 1
     assert client.get("/api/admin/users").json()["total"] == 1
     catalog = client.get("/api/admin/content/catalog").json()["items"]
-    assert len(catalog) == 30
+    assert len(catalog) == 1
     cs = next(item for item in catalog if item["paper_code"] == "CS")
-    assert cs["study_notes"] == 52 and cs["practice_questions"] == 30
+    assert cs["study_notes"] == 56 and cs["practice_questions"] == 38
     assert data["total_content_items"] >= 212
     assert data["pending_content_reviews"] == data["total_content_items"]
 
@@ -197,7 +197,7 @@ def test_admin_can_review_material_and_practice_content(client):
     found = next(item for item in updated["items"] if item["content_id"] == material["content_id"])
     assert found["review_status"] == "approved"
     assert found["review_note"] == "Reviewed definitions and scope."
-    assert client.get("/api/admin/content/review-queue?paper_code=CS&content_type=material").json()["total_available"] == 52
+    assert client.get("/api/admin/content/review-queue?paper_code=CS&content_type=material").json()["total_available"] == 56
     overview = client.get("/api/admin/overview").json()
     assert overview["approved_content_items"] == 1
     assert overview["pending_content_reviews"] == overview["total_content_items"] - 1

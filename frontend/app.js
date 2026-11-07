@@ -197,14 +197,14 @@ function renderOverview() {
   return `
     <div class="page-heading">
       <div><span class="eyebrow">YOUR PREPARATION SPACE · ${escapeHTML(dateText.toUpperCase())}</span><h1>Your preparation, in focus.</h1><p>A clear plan turns a big goal into a series of doable steps.</p></div>
-      <div class="heading-actions"><select class="select-control" id="paper-switcher" aria-label="Select GATE paper">${paperOptions(profile.paper_code)}</select><button class="btn btn-primary" data-action="create-task">${icon('plus', 14)} Add task</button></div>
+      <div class="heading-actions"><span class="status-pill cs-track-pill">CS · Computer Science and Information Technology</span><button class="btn btn-primary" data-action="create-task">${icon('plus', 14)} Add task</button></div>
     </div>
 
     <section class="hero-panel">
       <div class="hero-content">
         <div class="hero-kicker"><span class="pulse"></span> YOUR GATE 2027 JOURNEY</div>
         <h2>Make today count. One concept at a time.</h2>
-        <p>Your ${escapeHTML(paper.code)} preparation workspace is ready. Start with the official syllabus, make a realistic plan, and build consistency through focused practice.</p>
+        <p>Your CS preparation workspace is ready. Start with the official syllabus, practise topic by topic and build consistency with a focused study plan. This site opens directly—no sign-in required.</p>
         <div class="hero-actions"><button class="btn btn-primary" data-action="go-view" data-view="syllabus">Explore your syllabus ${icon('arrow', 13)}</button><button class="btn btn-hero-quiet" data-action="open-profile">Personalise my plan</button></div>
       </div>
       <div class="countdown-card">
@@ -232,7 +232,7 @@ function renderOverview() {
         <div class="panel-body">
           <div class="paper-card">
             <div class="paper-card-top"><div class="paper-code-large">${escapeHTML(paper.code)}</div><div><b>${escapeHTML(paper.name)}</b><small>Official paper catalogue · IIT Madras</small></div></div>
-            <div class="paper-details"><div class="paper-detail"><small>General Aptitude</small><b>15 marks</b></div><div class="paper-detail"><small>Paper-specific section</small><b>85 marks</b></div></div>
+            <div class="paper-details"><div class="paper-detail"><small>General Aptitude</small><b>15 marks</b></div><div class="paper-detail"><small>Engineering Mathematics + CS core</small><b>85 marks</b></div></div>
             <div class="paper-card-actions"><button class="btn btn-secondary" data-action="go-view" data-view="syllabus">View syllabus</button><a class="btn btn-secondary" href="https://gate2027.iitm.ac.in/question_paper_pattern" target="_blank" rel="noreferrer">Exam pattern ↗</a></div>
           </div>
         </div>
@@ -281,7 +281,7 @@ async function renderSyllabus() {
   const progress = data.progress || { total: 0, completed: 0, percent: 0 };
   const common = data.common_section;
   host.innerHTML = `
-    <div class="page-heading"><div><span class="eyebrow">OFFICIAL SCOPE · PERSONAL PROGRESS</span><h1>Syllabus explorer</h1><p>Follow the GATE 2027 paper structure and open topic notes from the study library.</p></div><div class="heading-actions"><select class="select-control" id="paper-switcher" aria-label="Select GATE paper">${paperOptions(profile.paper_code)}</select><a class="btn btn-secondary" href="${escapeHTML(data.official_url || paper.official_syllabus_url || 'https://gate2027.iitm.ac.in/exam_papers_and_syllabus')}" target="_blank" rel="noreferrer">Official syllabus ↗</a></div></div>
+    <div class="page-heading"><div><span class="eyebrow">OFFICIAL SCOPE · PERSONAL PROGRESS</span><h1>Syllabus explorer</h1><p>Follow the GATE 2027 paper structure and open topic notes from the study library.</p></div><div class="heading-actions"><span class="status-pill cs-track-pill">CS · Computer Science and Information Technology</span><a class="btn btn-secondary" href="${escapeHTML(data.official_url || paper.official_syllabus_url || 'https://gate2027.iitm.ac.in/exam_papers_and_syllabus')}" target="_blank" rel="noreferrer">Official syllabus ↗</a></div></div>
     <div class="notice"><span class="notice-icon">ⓘ</span><div><strong>Use the official PDF as the source of truth.</strong><p>${escapeHTML(data.message || 'Topic-level structure is being reviewed.')} GATEPath notes are supplemental learning aids, not official GATE material.</p></div></div>
     <div class="syllabus-intro" style="margin-top:14px">
       <div class="syllabus-paper-banner"><div class="paper-code-large">${escapeHTML(paper.code)}</div><div><span class="eyebrow" style="color:#b6c8e9">SELECTED PAPER · GATE 2027</span><h2>${escapeHTML(paper.name)}</h2><p>Versioned syllabus workspace · Source checked ${escapeHTML(data.last_checked || 'not recorded')}</p></div><span class="status-pill">${data.verified ? 'Source transcribed' : 'Topic import pending'}</span></div>
@@ -292,10 +292,10 @@ async function renderSyllabus() {
       <div class="syllabus-stat"><small>COMPLETED</small><strong>${progress.completed}</strong></div>
       <div class="syllabus-stat"><small>REMAINING</small><strong>${Math.max(0, progress.total-progress.completed)}</strong></div>
     </div>
-    ${common ? `<div class="common-section-card"><span class="common-section-icon">GA</span><div class="common-section-copy"><b>${escapeHTML(common.name || 'General Aptitude')}</b><p>${escapeHTML(common.description || 'Common section for GATE papers.')} Detailed topic cards are being imported from the official shared PDF.</p></div><div class="common-section-meta"><strong>${common.marks || 15} marks</strong><small>Common section</small><a class="text-link" href="${escapeHTML(common.official_url || 'https://gate2027.iitm.ac.in/exam_papers_and_syllabus')}" target="_blank" rel="noreferrer">Open PDF ↗</a></div></div>` : ''}
+    ${common ? `<div class="common-section-card"><span class="common-section-icon">GA</span><div class="common-section-copy"><b>${escapeHTML(common.name || 'General Aptitude')}</b><p>${escapeHTML(common.description || 'The common 15-mark GATE section.')} Four study domains are mapped to the official General Aptitude PDF and have progress-tracked notes.</p></div><div class="common-section-meta"><strong>${common.marks || 15} marks</strong><small>Common section</small><a class="text-link" href="${escapeHTML(common.official_url || 'https://gate2027.iitm.ac.in/exam_papers_and_syllabus')}" target="_blank" rel="noreferrer">Open PDF ↗</a></div></div>` : ''}
     ${data.sections?.length ? `
       <div class="syllabus-toolbar"><label class="syllabus-search">${icon('search',14)}<input id="syllabus-topic-search" type="search" placeholder="Search topics and concepts" aria-label="Search syllabus topics"/></label><select id="syllabus-status-filter" class="select-control" aria-label="Filter by topic status"><option value="all">All topic statuses</option><option value="not_started">Not started</option><option value="in_progress">In progress</option><option value="completed">Completed</option></select></div>
-      <section class="syllabus-section"><div class="panel-head"><div><h3>${escapeHTML(paper.code)} paper topics</h3><p>Topic labels are a navigational breakdown of the official statements.</p></div><span class="status-label">${data.sections.length} sections</span></div>
+      <section class="syllabus-section"><div class="panel-head"><div><h3>CS syllabus and General Aptitude</h3><p>Ten CS subject sections plus the shared General Aptitude syllabus, with trackable topics and study notes.</p></div><span class="status-label">${data.sections.length} sections</span></div>
       <div id="syllabus-topic-sections">${data.sections.map((section,index)=>`
         <details class="syllabus-accordion" open><summary><span class="section-index">${String(index+1).padStart(2,'0')}</span><span class="section-summary-copy"><b>${escapeHTML(section.name)}</b><small>${section.topics.length} topics · ${escapeHTML(section.code)}</small></span></summary><div class="topic-list">
           ${section.topics.map(topic=>`
@@ -892,8 +892,8 @@ function renderPyqBankContent(result) {
   const sessionOptions = [`<option value="all">All sessions</option>`, ...(catalog.sessions || []).map((session) => `<option value="${escapeHTML(session.session)}" ${state.pyqSession === session.session ? 'selected' : ''}>${escapeHTML(session.session)} · ${session.question_count} Qs</option>`)].join('');
   const sectionOptions = `<option value="all">All sections</option><option value="GA" ${state.pyqSection === 'GA' ? 'selected' : ''}>General Aptitude</option><option value="CS" ${state.pyqSection === 'CS' ? 'selected' : ''}>Computer Science subject</option>`;
   host.innerHTML = `
-    <div class="page-heading"><div><span class="eyebrow">STAGE 7 · VERIFIED PREVIOUS PAPERS</span><h1>Previous-year question bank</h1><p>Practise against official GATE papers and final answer keys. Your attempts and bookmarks stay private to your account.</p></div><div class="heading-actions"><select class="select-control" id="paper-switcher" aria-label="Select GATE paper">${paperOptions(state.profile.paper_code)}</select></div></div>
-    <div class="notice pyq-provenance"><span class="notice-icon">✓</span><div><strong>Question provenance matters.</strong><p>GATEPath stores verified question metadata and answer-key results. The original question wording and figures stay in the official IIT-hosted PDF; open the paper beside this workspace when attempting a question.</p></div></div>
+    <div class="page-heading"><div><span class="eyebrow">STAGE 7 · VERIFIED PREVIOUS PAPERS</span><h1>Previous-year question bank</h1><p>Open official CS papers and answer keys, then track your own attempts in this guest workspace.</p></div><div class="heading-actions"><span class="status-pill cs-track-pill">CS · Computer Science and Information Technology</span></div></div>
+    <div class="notice pyq-provenance"><span class="notice-icon">✓</span><div><strong>Official papers, original practice and editorial notes are clearly separated.</strong><p>GATEPath stores verified answer-key metadata for the 2026 CS sessions. The original question wording and figures stay in the official IIT-hosted PDFs; open the linked paper while attempting each question.</p></div></div>
     <div class="material-metrics pyq-metrics">
       <div class="syllabus-stat"><small>INTERACTIVE QUESTIONS</small><strong>${summary.total_questions || 0}</strong></div>
       <div class="syllabus-stat"><small>ATTEMPTED</small><strong>${summary.attempted_questions || 0}</strong></div>
@@ -901,7 +901,7 @@ function renderPyqBankContent(result) {
       <div class="syllabus-stat"><small>BOOKMARKED</small><strong>${summary.bookmarked_questions || 0}</strong></div>
     </div>
     <section class="panel pyq-toolbar-panel">
-      <div class="panel-head"><div><h3>Find a question</h3><p>${escapeHTML(paper.code)} · Interactive answer checking currently imported for GATE 2026 CS-1 and CS-2.</p></div><span class="status-pill">${catalog.interactive_question_count || 0} verified keys</span></div>
+      <div class="panel-head"><div><h3>Find a question</h3><p>${escapeHTML(paper.code)} · CS-1 and CS-2 answer-key metadata is imported for 2026. Official CS paper PDFs and keys are linked for 2021–2026.</p></div><span class="status-pill">${catalog.interactive_question_count || 0} verified keys</span></div>
       <div class="pyq-filters">
         <label class="form-field"><span>Year</span><select class="select-control" id="pyq-year-filter">${yearOptions}</select></label>
         <label class="form-field"><span>Session</span><select class="select-control" id="pyq-session-filter">${sessionOptions}</select></label>
@@ -913,7 +913,7 @@ function renderPyqBankContent(result) {
     </section>
     <div class="pyq-results-head"><div><span class="eyebrow">${imported ? 'OFFICIAL ANSWER KEY METADATA' : 'OFFICIAL ARCHIVE'}</span><h2>${imported ? `${result.count} matching questions` : `GATE ${state.pyqYear} archive`}</h2></div>${imported ? '<small>Answer key is checked after you submit.</small>' : ''}</div>
     ${imported ? `<div class="pyq-question-grid">${state.pyqItems.map(renderPyqCard).join('') || '<div class="empty-state"><strong>No questions match these filters</strong><p>Try another session, type or search term.</p></div>'}</div>` : `<section class="syllabus-empty"><h3>Interactive import is not available for this year yet</h3><p>${escapeHTML(result.notice || 'Open the official archive to access the paper and answer key. This year is not represented as an imported question set.')}</p><a class="btn btn-primary" href="${escapeHTML((catalog.archive_sources||[]).find((source)=>String(source.year)===String(state.pyqYear))?.url || 'https://gate2026.iitg.ac.in/download.html')}" target="_blank" rel="noreferrer">Open official GATE archive ↗</a></section>`}
-    <section class="panel pyq-archive-panel"><div class="panel-head"><div><h3>Official paper archives</h3><p>Original question papers and keys hosted by GATE organising institutes.</p></div></div><div class="pyq-archive-list">${(catalog.archive_sources||[]).map(source=>`<a class="pyq-archive-item" href="${escapeHTML(source.url)}" target="_blank" rel="noreferrer"><span class="pyq-archive-year">${escapeHTML(String(source.year))}</span><span><b>${escapeHTML(source.title)}</b><small>${escapeHTML(source.status.replaceAll('_',' '))}</small></span><span aria-hidden="true">↗</span></a>`).join('')}</div></section>
+    <section class="panel pyq-archive-panel"><div class="panel-head"><div><h3>Official paper archives</h3><p>Original question papers and keys hosted by GATE organising institutes.</p></div></div><div class="pyq-archive-list">${(catalog.archive_sources||[]).map(source=>`<div class="pyq-archive-item"><span class="pyq-archive-year">${escapeHTML(String(source.year))}</span><span><b>${escapeHTML(source.title)}</b><small>${escapeHTML(source.status.replaceAll('_',' '))}</small>${(source.paper_links||[]).map(link=>`<div class="pyq-session-links"><b>${escapeHTML(link.session)}</b> · <a href="${escapeHTML(link.paper_url)}" target="_blank" rel="noreferrer">Question paper PDF ↗</a>${link.answer_key_url?` · <a href="${escapeHTML(link.answer_key_url)}" target="_blank" rel="noreferrer">Answer key ↗</a>`:''}</div>`).join('')}</span><a href="${escapeHTML(source.url)}" target="_blank" rel="noreferrer" aria-label="Official archive">↗</a></div>`).join('')}</div></section>
     <p class="pyq-footer-note">GATEPath’s interactive 2026 import contains answer-key metadata, verified answer/range values, source references and a small set of original worked explanations. Additional year/paper imports and editorial solutions require review before publication.</p>
   `;
   setIcons(host);
@@ -1771,7 +1771,7 @@ function closeModal() {
 function openPreferencesModal() {
   openModal('Personalise your preparation', 'YOUR STUDY PROFILE', `
     <form id="preferences-form">
-      <div class="form-field"><label for="preference-paper">GATE paper</label><select class="form-control" id="preference-paper" name="paper_code">${paperOptions(state.profile.paper_code)}</select></div>
+      <div class="notice"><span class="notice-icon">CS</span><div><strong>One focused paper</strong><p>GATE 2027 Computer Science and Information Technology only.</p></div></div>
       <div class="form-field"><label for="preference-target">Your preparation goal</label><select class="form-control" id="preference-target" name="target"><option ${state.profile.target === 'IIT admission' ? 'selected' : ''}>IIT admission</option><option ${state.profile.target === 'Top GATE score' ? 'selected' : ''}>Top GATE score</option><option ${state.profile.target === 'PSU opportunity' ? 'selected' : ''}>PSU opportunity</option><option ${state.profile.target === 'Strong subject mastery' ? 'selected' : ''}>Strong subject mastery</option></select></div>
       <div class="form-field"><label for="preference-hours">Daily study target</label><select class="form-control" id="preference-hours" name="daily_hours">${[1,2,3,4,5,6,7,8,9,10,12,14,16].map((h) => `<option value="${h}" ${Number(state.profile.daily_hours) === h ? 'selected' : ''}>${h} hours per day</option>`).join('')}</select></div>
       <div class="modal-actions"><button class="btn btn-secondary" type="button" data-action="close-modal">Cancel</button><button class="btn btn-primary" type="submit">Save preferences ${icon('check', 13)}</button></div>
@@ -1797,7 +1797,7 @@ async function handlePreferencesSubmit(event) {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   const payload = {
-    paper_code: String(form.get('paper_code')),
+    paper_code: 'CS',
     target: String(form.get('target')),
     daily_hours: Number(form.get('daily_hours')),
   };
@@ -1844,7 +1844,7 @@ async function toggleTask(taskId) {
 }
 
 async function changePaper(code) {
-  if (!code || code === state.profile.paper_code) return;
+  if (!code || code === 'CS' || code !== 'CS') return;
   try {
     state.profile = await api('/profile', { method: 'PUT', body: JSON.stringify({ ...state.profile, paper_code: code }) });
     await refreshOverview();
@@ -1884,7 +1884,6 @@ function handleClick(event) {
   if (!actionTarget) return;
   const action = actionTarget.dataset.action;
   if (action === 'go-view') { document.querySelector('.search-results')?.remove(); setNav(actionTarget.dataset.view); }
-  else if (action === 'logout') signOut();
   else if (action === 'open-profile') openPreferencesModal();
   else if (action === 'create-task') openTaskModal();
   else if (action === 'close-modal') closeModal();
@@ -1954,23 +1953,16 @@ function updateAccountUI() {
   const sidebarMeta = document.querySelector('.profile-mini small');
   if (name) name.textContent = first;
   if (avatar) avatar.textContent = initials || 'GP';
-  if (sidebarName) sidebarName.textContent = state.user.full_name;
-  if (sidebarMeta) sidebarMeta.textContent = state.user.email;
+  if (sidebarName) sidebarName.textContent = 'GATE Learner';
+  if (sidebarMeta) sidebarMeta.textContent = 'Guest workspace · this browser';
   const adminNav = document.getElementById('admin-nav-item');
-  if (adminNav) adminNav.hidden = state.user.role !== 'admin';
-}
-
-async function signOut() {
-  try {
-    await api('/auth/logout', { method: 'POST', body: '{}' });
-  } catch (_) { /* The server-side session may already have expired. */ }
-  window.location.assign('/login');
+  if (adminNav) adminNav.hidden = true;
 }
 
 async function boot() {
   setIcons();
   try {
-    const session = await api('/auth/me');
+    const session = await api('/workspace');
     state.user = session.user;
     state.profile = session.profile;
     updateAccountUI();
@@ -1987,9 +1979,8 @@ async function boot() {
     }
     renderView();
   } catch (error) {
-    if (error.message.toLowerCase().includes('sign in') || error.message.includes('(401)')) {
-      const next = `${window.location.pathname}${window.location.search}`;
-      window.location.replace(`/login?next=${encodeURIComponent(next)}`);
+    if (error.message.toLowerCase().includes('guest workspace expired') || error.message.includes('(401)')) {
+      window.location.replace('/');
       return;
     }
     document.getElementById('page-content').innerHTML = `<section class="panel content-placeholder"><div><div class="placeholder-icon">${icon('file', 24)}</div><h2>Could not connect to the GATEPath API</h2><p>${escapeHTML(error.message)}. Start the backend using the instructions in README.md and reload this page.</p></div></section>`;
@@ -2001,7 +1992,7 @@ async function boot() {
   document.getElementById('theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark'));
   document.getElementById('mobile-menu').addEventListener('click', () => document.getElementById('sidebar').classList.toggle('open'));
   document.addEventListener('change', async (event) => {
-    if (event.target && event.target.id === 'paper-switcher') changePaper(event.target.value);
+    
     if (event.target?.id === 'pyq-year-filter') { state.pyqYear = Number(event.target.value); state.pyqSession = 'all'; await loadPyqQuestionItems(); }
     if (event.target?.id === 'pyq-session-filter') { state.pyqSession = event.target.value; await loadPyqQuestionItems(); }
     if (event.target?.id === 'pyq-type-filter') { state.pyqType = event.target.value; await loadPyqQuestionItems(); }

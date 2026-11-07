@@ -49,9 +49,9 @@ def test_material_catalog_has_all_cs_topics(client):
     assert response.status_code == 200, response.text
     payload = response.json()
     assert payload["paper_code"] == "CS"
-    assert payload["summary"]["total"] == 52
-    assert len(payload["items"]) == 52
-    assert payload["content_version"] == "1.0.0"
+    assert payload["summary"]["total"] == 56
+    assert len(payload["items"]) == 56
+    assert payload["content_version"] == "1.1.0"
 
 
 def test_material_detail_contains_learning_sections_and_sources(client):
@@ -106,14 +106,12 @@ def test_material_filters_work(client):
     assert any("Deadlock" in item["topic_name"] for item in items)
 
 
-def test_missing_content_for_another_paper_is_explicit(client):
-    register(client, paper_code="DA")
-    response = client.get("/api/materials?paper_code=DA")
-    assert response.status_code == 200
-    payload = response.json()
-    assert payload["content_status"] == "awaiting_content_import"
-    assert payload["items"] == []
-    assert payload["official_syllabus_url"].endswith("DA_GATE2027_Syllabus.pdf")
+def test_other_papers_are_rejected_from_the_cs_only_material_catalog(client):
+    register(client)
+    assert client.get("/api/materials?paper_code=DA").status_code == 404
+    papers = client.get("/api/papers").json()
+    assert papers["count"] == 1
+    assert [item["code"] for item in papers["items"]] == ["CS"]
 
 
 def test_syllabus_endpoint_serves_cs_structure_and_progress(client):
@@ -122,8 +120,11 @@ def test_syllabus_endpoint_serves_cs_structure_and_progress(client):
     assert response.status_code == 200, response.text
     payload = response.json()
     assert payload["verified"] is True
-    assert len(payload["sections"]) == 10
-    assert sum(len(section["topics"]) for section in payload["sections"]) == 52
+    assert len(payload["sections"]) == 11
+    assert sum(len(section["topics"]) for section in payload["sections"]) == 56
+    ga = next(section for section in payload["sections"] if section["code"] == "GA")
+    assert len(ga["topics"]) == 4
+    assert payload["common_section"]["marks"] == 15
     assert payload["common_section"]["code"] == "GA"
 
 
@@ -132,7 +133,7 @@ def test_dashboard_reflects_completed_material_topics(client):
     client.patch("/api/materials/CS-01-01/progress?paper_code=CS", json={"status": "completed"})
     payload = client.get("/api/dashboard").json()
     assert payload["syllabus_topic_completed"] == 1
-    assert payload["syllabus_topic_total"] == 52
+    assert payload["syllabus_topic_total"] == 56
     assert payload["syllabus_progress_percent"] == 2
 
 
@@ -151,7 +152,7 @@ def test_material_ids_match_the_official_topic_import():
     materials = json.loads(material_path.read_text(encoding="utf-8"))
     syllabus_ids = {topic["id"] for section in syllabus["sections"] for topic in section["topics"]}
     material_ids = {item["id"] for item in materials["materials"]}
-    assert len(material_ids) == 52
+    assert len(material_ids) == 56
     assert material_ids == syllabus_ids
 
 

@@ -45,8 +45,8 @@ def check_json_and_content() -> list[str]:
     try:
         papers = read(data_root / "papers.json")
         codes = [paper["code"] for paper in papers]
-        if len(codes) != 30 or len(set(codes)) != 30:
-            issues.append("Paper catalogue must contain exactly 30 unique paper codes")
+        if codes != ["CS"]:
+            issues.append("CS-only release must contain exactly the CS paper")
 
         syllabus = read(data_root / "syllabi" / "CS-GATE-2027.json")
         materials = read(data_root / "materials" / "CS-GATE-2027.json")
@@ -84,7 +84,7 @@ def check_api_routes() -> list[str]:
 
 def check_frontend_assets() -> list[str]:
     issues: list[str] = []
-    for page in ("landing.html", "auth.html", "index.html"):
+    for page in ("index.html",):
         path = ROOT / "frontend" / page
         if not path.is_file():
             issues.append(f"Missing frontend page: {page}")
@@ -98,6 +98,7 @@ def check_frontend_assets() -> list[str]:
         "requirements.txt", "requirements-dev.txt", "scripts/start.sh", "scripts/start.ps1",
         "scripts/docker-entrypoint.sh", "scripts/backup_db.py", ".env.example", ".gitignore", "Dockerfile",
         ".dockerignore", "render.yaml", "docs/STAGE-14-DEPLOYMENT.md", "docs/STAGE-14-CHECKLIST.md",
+        "docs/CS-ONLY-TRACK.md",
     ):
         if not (ROOT / required).is_file():
             issues.append(f"Missing project setup file: {required}")

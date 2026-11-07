@@ -104,14 +104,9 @@ def test_invalid_subject_code_returns_not_found(client):
     assert client.get("/api/mindmaps?paper_code=CS&section_code=CS-99").status_code == 404
 
 
-def test_unimported_paper_has_explicit_pending_state(client):
-    register(client, paper_code="DA")
-    response = client.get("/api/mindmaps?paper_code=DA")
-    assert response.status_code == 200
-    payload = response.json()
-    assert payload["content_status"] == "awaiting_structured_import"
-    assert payload["nodes"] == []
-    assert payload["official_syllabus_url"].endswith("DA_GATE2027_Syllabus.pdf")
+def test_non_cs_papers_are_rejected_from_mindmap_scope(client):
+    register(client)
+    assert client.get("/api/mindmaps?paper_code=DA").status_code == 404
 
 
 def test_student_progress_is_reflected_in_mindmap_nodes(client):

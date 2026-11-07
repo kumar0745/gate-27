@@ -167,11 +167,10 @@ def test_filters_support_session_type_section_and_topic(client):
 def test_non_imported_year_and_paper_show_honest_pending_state(client):
     register(client)
     older = client.get("/api/pyq/questions?paper_code=CS&year=2025").json()
-    other_paper = client.get("/api/pyq/questions?paper_code=DA&year=2026").json()
+    other_paper = client.get("/api/pyq/questions?paper_code=DA&year=2026")
     assert older["content_status"] == "awaiting_interactive_import"
     assert older["items"] == []
-    assert other_paper["content_status"] == "awaiting_interactive_import"
-    assert other_paper["items"] == []
+    assert other_paper.status_code == 404
 
 
 def test_summary_uses_latest_attempt_per_question_for_accuracy(client):
@@ -217,6 +216,8 @@ def test_seed_data_has_130_source_verified_questions_and_safe_metadata():
     assert len(questions) == 130
     assert len({question["id"] for question in questions}) == 130
     assert all(question["verification_status"] == "official_answer_key_verified" for question in questions)
+    assert all(question["answer_key"] is not None for question in questions)
+    assert all(question["question_text_hosted"] is False for question in questions)
     assert all(question["question_text_hosted"] is False for question in questions)
     assert all(question["answer_key_url"].endswith(("CS1_Keys.pdf", "CS2_Keys.pdf")) for question in questions)
 
