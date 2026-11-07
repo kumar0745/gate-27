@@ -1,0 +1,32 @@
+name: Restore GATEPath source tree
+on:
+  push:
+    branches: [main]
+    paths:
+      - "release-payload/**"
+permissions:
+  contents: write
+jobs:
+  restore-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Reconstruct and extract release
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat release-payload/part-*.b64 | base64 --decode > /tmp/GATEPath_2027_Full_Application.zip
+          unzip -q /tmp/GATEPath_2027_Full_Application.zip -d /tmp/gatepath-release
+          test -f /tmp/gatepath-release/GATEPath-2027/backend/app/main.py
+          test -f /tmp/gatepath-release/GATEPath-2027/frontend/index.html
+          rsync -a --delete --exclude='.git/' /tmp/gatepath-release/GATEPath-2027/ ./
+          rm -rf release-payload
+          rm -f .github/workflows/restore-source.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add complete GATEPath 2027 application source"
+          git push origin main
